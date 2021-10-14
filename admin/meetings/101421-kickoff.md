@@ -20,7 +20,7 @@
 - [x] Royce
 - [ ] Divneet
 - [ ] Julian
-- [ ] Xuan
+- [x] Xuan
 - [x] Robert (Bobby)
 - [x] Sizhe (Chris)
 
