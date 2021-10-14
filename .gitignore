@@ -24,3 +24,6 @@ node_modules/
 
 # macOS files
 .DS_Store
+
+# Obsidian files
+.obsidian/
