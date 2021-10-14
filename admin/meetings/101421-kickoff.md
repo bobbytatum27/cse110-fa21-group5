@@ -8,7 +8,7 @@
   - Team name & brand.
   - Group contract.
 
-### Time & Place
+### Time
 - Group 5
 - Thursday, October 14, 2021  
 - 12pm @ https://ucsd.zoom.us/my/adory
@@ -18,9 +18,9 @@
 - [x] Hanming
 - [ ] Steven
 - [x] Royce
-- [ ] Divneet
+- [x] Divneet
 - [ ] Julian
-- [ ] Xuan
+- [x] Xuan
 - [x] Robert (Bobby)
 - [x] Sizhe (Chris)
 
@@ -99,7 +99,7 @@
 - Being responsive & reliable on Slack for communication. 
   - **Ensure that everyone has Slack notifications on - computer & phone.**
     - At least, for direct messages & mentions.
-  - Include contact rule for time period to respond to messages during the day (ex: 3-4 hours from time sent).
+  - Include contract rule for time period to respond to messages during the day (ex: 3-4 hours from time sent).
 - MINIMUM of 1 team meeting per week.
 - **Implemented next week: Daily standups are expected and checked by the TA.**
   - Standups are daily updates about progress & mood. Should take around 5 minutes.
@@ -117,12 +117,15 @@
 
 --- 
 
+## Oops..
+- Forgot to go through the [Preferences Google Form](https://forms.gle/xLsiHaUuHaYkM5647).
+
 ## Branding Brainstorm
 - Team name, brand, theme, values
 - Example materials
   - Colors, logo, mascot, fonts
 - Currently placeholder'd with navy scales
-- Miro: https://miro.com/app/board/o9J_lq9c5qI=/?invite_link_id=63967211716
+- Miro Board: https://miro.com/app/board/o9J_lq9c5qI=/?invite_link_id=63967211716
 
 --- 
 
@@ -144,12 +147,16 @@
 
 --- 
 
-## Decisions
-- Decision
-  - Reason 1
-  - Reason 2
-  - Counterpoints
-    - Counterpoint 1
+## Decisions & Takeaways
+- Sprint 0 (Weeks 3 & 4) are mainly brainstorming and team formation.
+- Assignments
+	- We'll submit the assignments & give more info on tasks for team members accordingly
+	- Aquatic-based theme/brand seemed ok
+		- Will compile the branding ideas and post more detailed guidelines for the video
+	- Will send finished/prototype contract for feedback & signing
+- Become familiar with the team expectations!
+- This group experience is new to us all - we'll get more familiar with each other and figure it out as time goes by.
+- We'll try to make the meeting flow a bit smoother, we just need more time to figure it out.
 
 ---
-Meeting finish time:
+Meeting finish time: 12:50pm

@@ -42,7 +42,7 @@
 
 --- 
 
-## Decisions
+## Decisions & Takeaways
 - Decision
   - Reason 1
   - Reason 2
