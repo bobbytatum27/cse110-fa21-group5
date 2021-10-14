@@ -1,29 +1,46 @@
 # Topic
 
 ## Info
+### Main Topics
+- Main topic
+
+### Time & Place
 - Group 5
-- DayOfWeek, Month dd, yyyy
-- 11pm @ Price Center
+- Wednesday, October 13, 2021  
+- 11am @ Price Center
 
 ### Attendance
 - [ ] Adory 
 - [ ] Hanming
 - [ ] Steven
 - [ ] Royce
-- [ ] Peixi
 - [ ] Divneet
 - [ ] Julian
 - [ ] Xuan
 - [ ] Robert (Bobby)
 - [ ] Sizhe (Chris)
-- [ ] Jonathan (Jonny)
+
+--- 
 
 ## Agenda
-### Previously
+### Previous Meeting
 
-### Currently
+### Current Meeting
 
 ### For next time!
+
+---
+
+## Section 1
+
+---
+
+## Additional Remarks
+### Remaining Questions / Concerns
+- When/How should the specs be fleshed out?
+  - Who will do it?
+
+--- 
 
 ## Decisions
 - Decision
@@ -33,4 +50,5 @@
     - Counterpoint 1
 
 ---
+
 Meeting finish time:

@@ -12,8 +12,6 @@
 
 ### Royce Labuguen
 
-### Peixi Liu
-
 ### Diveneet Kaur
 
 ### Julian Yan
@@ -23,5 +21,3 @@
 ### Robert (Bobby) Tatum
 
 ### Sizhe (Chris) Fan
-
-### Jonathan (Jonny King)
