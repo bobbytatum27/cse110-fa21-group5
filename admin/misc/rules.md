@@ -52,6 +52,7 @@
 - Listen to what the other person is saying instead of preemptively acting and ask questions to clarify your understanding.
 - Summarize the areas of agreement and disagreement, ask the other person if they agree with your assessment, modify your assessment until both of you agree on the areas of conflict.
 - Try complimenting the other person’s insights and achievements. (Recall "Yes, and..." from lecture)
+- Go to the TA or Professor Powell if members are violating major university rules.
 
 ## 6) Sign!
 - Digitally or physically sign the rules & upload a PDF to the repo in `/admin/misc` named as `rules-{First Name}{Last Name}.pdf`. (ex: `rules-adoryvo.pdf`)
