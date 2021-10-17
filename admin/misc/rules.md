@@ -7,7 +7,7 @@
 - Group 5
 - TA: Sanat Bhandarkhar
 - Instructor: Professor Powell
-- Team Name: TBD
+- Team Name: Team Ocean
 
 ### Team Members
 1. Adory Vo, ahvo@ucsd.edu 
