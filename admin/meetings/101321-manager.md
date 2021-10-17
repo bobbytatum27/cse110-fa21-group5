@@ -102,4 +102,4 @@
   
 --- 
 
-Meeting finish time: 12:30pm (1.5 hrs)
+Meeting finish time: 12:30pm (1 hr, 30 min)

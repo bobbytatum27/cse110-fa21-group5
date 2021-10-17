@@ -6,8 +6,8 @@
 
 ### Time & Place
 - Group 5
-- Wednesday, October 13, 2021  
-- 11am @ Price Center
+- Friday, October ##, 2021  
+- 11am @ https://ucsd.zoom.us/my/adory
 
 ### Attendance
 - [ ] Adory 
@@ -37,8 +37,8 @@
 
 ## Additional Remarks
 ### Remaining Questions / Concerns
-- When/How should the specs be fleshed out?
-  - Who will do it?
+- Question 1
+- Concern 1
 
 --- 
 

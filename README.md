@@ -6,7 +6,7 @@
 
 ## 📁 File Structure
 - `/admin`: Administrative material.
-  - `/admin/meetings`: Aeeting minutes (notes).
+  - `/admin/meetings`: Meeting minutes (notes).
   - `/admin/misc`: Miscellaneous material like team rules.
   - `/admin/videos`: Videos.
 - `/source`: (Source code??).

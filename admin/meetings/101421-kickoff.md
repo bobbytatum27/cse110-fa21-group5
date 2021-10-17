@@ -159,4 +159,4 @@
 - We'll try to make the meeting flow a bit smoother, we just need more time to figure it out.
 
 ---
-Meeting finish time: 12:50pm
+Meeting finish time: 12:50pm (50 min)
