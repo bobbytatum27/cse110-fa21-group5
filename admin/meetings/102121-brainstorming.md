@@ -1,16 +1,16 @@
-# Topic
+# Brainstorming (Part 1)
 
 ## Info
 
 ### Main Topics
 
--   Main topic
+-   Work in progress
 
 ### Time & Place
 
 -   Group 5
--   Friday, October ##, 2021
--   11am @ https://ucsd.zoom.us/my/adory
+-   Thursday, October 21, 2021
+-   12pm @ https://ucsd.zoom.us/my/adory
 
 ### Attendance
 
