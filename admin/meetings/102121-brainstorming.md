@@ -2,10 +2,6 @@
 
 ## Info
 
-### Main Topics
-
--   Work in progress
-
 ### Time & Place
 
 -   Group 5
@@ -64,6 +60,7 @@
 
 ## Brainstorming Session
 
+-   [Miro Board](https://miro.com/app/board/o9J_lp7zNig=/?invite_link_id=379224277445)
 -   Each person created user personas
 -   Organized things about those personas (interests, skills, tech savviness, etc.)
 -   Narrowed down target audience to **active & health-conscious people in the 20's age range**.

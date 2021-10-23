@@ -2,10 +2,6 @@
 
 ## Info
 
-### Main Topics
-
--   Work in progress
-
 ### Time & Place
 
 -   Group 5
@@ -14,15 +10,15 @@
 
 ### Attendance
 
--   [ ] Adory
+-   [x] Adory
 -   [ ] Hanming
 -   [ ] Steven
--   [ ] Royce
+-   [x] Royce
 -   [ ] Divneet
 -   [ ] Julian
--   [ ] Xuan
--   [ ] Robert (Bobby)
--   [ ] Sizhe (Chris)
+-   [x] Xuan
+-   [x] Robert (Bobby)
+-   [x] Sizhe (Chris)
 
 ---
 
@@ -30,13 +26,36 @@
 
 ### Previous Meeting
 
+-   Brief manager meeting review
+-   Brainstorming on Miro
+    -   User personas
+    -   Target audience
+    -   Features
+
 ### Current Meeting
+
+-   Brief manager meeting review
+-   Review of progress from previous brainstorming
+-   Brainstorming on Miro
+    -   Brainstorming problem & solution
+    -   Further features
+    -   Organizing team role preferences
 
 ### For next time!
 
+-   Project pitch
+-   Other brainstorming artifacts
+-   Team roles
+
 ---
 
-## Section 1
+## Brainstorming Session
+
+-   [Miro Board](https://miro.com/app/board/o9J_lp7zNig=/?invite_link_id=613378311406)
+-   Thinking about specfic problems our target audience may have related to cooking or recipe management
+-   Further feature brainstorming
+    -   Ingredient links for purchasing/nutrition
+    -   Option to add videos for how to do steps specifically
 
 ---
 
@@ -44,19 +63,16 @@
 
 ### Remaining Questions / Concerns
 
--   Question 1
--   Concern 1
+-   How do we make a design based off of an active target audience?
+-   What other types of brainstorming can we do?
 
 ---
 
 ## Decisions & Takeaways
 
--   Decision
-    -   Reason 1
-    -   Reason 2
-    -   Counterpoints
-        -   Counterpoint 1
+-   Do brainstorming for competitor research
+-   See the resources Sanat posted in Slack for other artifacts
 
 ---
 
-Meeting finish time:
+Meeting finish time: 11:55am (55 minutes)
