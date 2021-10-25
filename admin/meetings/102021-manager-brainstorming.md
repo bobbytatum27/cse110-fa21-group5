@@ -73,8 +73,11 @@
             - Ex: Health-focused individuals
                 - Calorie count
                 - Meal prep
+        - After finishing 5 different personas, we can pick one as our main target audience.
     2. Which subset of these people do we want to build the app for?
         1. Features and user experience should be tailored for them.
+    3. Are we allowed to have multiple target audiences?
+        - Yes. It depends on our decision, but be specific as possible.
 2. Decide & organize features
     1. Brainstorm as many features as possible
     2. Organize core MVP features vs. add-on features
@@ -186,6 +189,7 @@
 ### API’s
 
 -   [Spoonacular](https://spoonacular.com/food-api)
+    -   it uses JSON LD data format.
     -   Studied - best API we have
     -   Recipe database
     -   Operations to access database
