@@ -1,6 +1,6 @@
 # Group 5 Team Page
 ## Brand
-- Team Ocean
+- Team Ocean 🌊
 - Blue shades, aquatic animals, waves
 - Team Intro Video: https://youtu.be/PDs3AKlGHdM
 

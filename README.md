@@ -5,12 +5,15 @@
 - _Coming soon:_ "Further Info about code, tests, documentation and other artifacts."
 
 ## 📁 File Structure
-- `/admin`: Administrative material.
-  - `/admin/meetings`: Meeting minutes (notes).
-  - `/admin/misc`: Miscellaneous material like team rules.
-  - `/admin/videos`: Videos.
-- `/source`: (Source code??).
-- `/specs`: (Project specs??).
+- `/admin`: Administrative material
+  - `/admin/branding`: Branding materials (logos, color schemes, etc.)
+  - `/admin/meetings`: Meeting minutes (notes)
+  - `/admin/misc`: Miscellaneous material like team rules
+  - `/admin/videos`: Videos
+- `/source`: (Source code??)
+- `/specs`: (Project specs??)
+  - `/specs/brainstorm`: Brainstorming artifacts
+  - `/specs/pitch`: Pitch deck & other artifacts
 
 ## 💡 Summary/Abstract
 
