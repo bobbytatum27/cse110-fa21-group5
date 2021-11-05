@@ -19,13 +19,13 @@
 
 -   [x] Adory
 -   [x] Hanming
--   [ ] Steven
--   [ ] Royce
+-   [x] Steven
+-   [x] Royce
 -   [ ] Divneet
--   [ ] Julian
--   [ ] Xuan
+-   [x] Julian
+-   [x] Xuan
 -   [ ] Robert (Bobby)
--   [ ] Sizhe (Chris)
+-   [x] Sizhe (Chris)
 
 ---
 
@@ -135,8 +135,8 @@
 ## Development Guidelines
 
 -   Repository
-    -   Projects board
-    -   Guidelines docs
+    -   [Projects board](https://github.com/orgs/cse110-fa21-group5/projects/1/views/1)
+    -   [Guidelines docs](https://github.com/cse110-fa21-group5/cse110-fa21-group5/tree/main/source)
 -   VS Code
     -   Node + ESLint
     -   Live Server
@@ -148,17 +148,17 @@
 
 ### Remaining Questions / Concerns
 
--   Question 1
+-   More details about pull request flow
 
 ---
 
 ## Decisions & Takeaways
 
--   Our pitch is good to go and we may start developing!
+-   Our pitch is good to go so we may start developing!
 -   Basic HTML structure is expected on Monday
 -   Roles and tasks were decided
 -   Exploratory coding should start
 
 ---
 
-Meeting finish time: 
+Meeting finish time: 11:50am (50 min)
