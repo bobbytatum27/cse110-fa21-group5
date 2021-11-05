@@ -1,0 +1,22 @@
+{
+  "name": "source",
+  "version": "0.0.1",
+  "description": "Recipe manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse110-fa21-group5/cse110-fa21-group5.git"
+  },
+  "author": "Team Ocean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse110-fa21-group5/cse110-fa21-group5/issues"
+  },
+  "homepage": "https://github.com/cse110-fa21-group5/cse110-fa21-group5#readme",
+  "devDependencies": {
+    "eslint": "^8.1.0"
+  }
+}

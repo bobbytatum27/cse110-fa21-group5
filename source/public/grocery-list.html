@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#2A52BE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- CSS Libraries -->
+    <!-- # Google Fonts (Alegreya, Quattrocento) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Nunito&family=Quattrocento&display=swap"
+        rel="stylesheet">
+
+    <!-- # Bootstrap CSS: https://getbootstrap.com/docs/5.1/components/buttons/ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- # Font Awesome Icons: https://fontawesome.com/v6.0/icons?m=free -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Custom CSS -->
+    <link href="/styles/styles.css" rel="stylesheet">
+
+    <title>Grocery List</title>
+</head>
+
+<body class="d-flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="d-flex flex-column justify-content-between text-center border-end">
+        <nav class="nav flex-column py-3">
+            <!-- Top Links -->
+            <a class="nav-link active" aria-current="page" href="/index.html" data-bs-toggle="tooltip" title="Recipes">
+                <i class="fa-solid fa-book fa-2x"></i>
+            </a>
+            <a class="nav-link" href="/planner.html" data-bs-toggle="tooltip" title="Meal Planner">
+                <i class="fa-solid fa-calendar fa-2x"></i>
+            </a>
+            <a class="nav-link" href="/grocery-list.html" data-bs-toggle="tooltip" title="Grocery List">
+                <i class="fa-solid fa-basket-shopping fa-2x"></i>
+            </a>
+        </nav>
+
+        <!-- Expand Drawer Button (default: invisible) -->
+        <a id="expandBtn" class="link-dark invisible" type="button" data-bs-toggle="offcanvas" data-bs-target="#drawer"
+            aria-controls="drawer" title="Expand drawer">
+            <i class="fa-solid fa-angle-right"></i>
+        </a>
+
+        <!-- Bottom Links -->
+        <footer class="nav flex-column py-3">
+            <img src="/images/wave-192.png" alt="" width="24" class="mx-auto" data-bs-toggle="tooltip"
+                title="Built by Team Ocean 🌊">
+        </footer>
+    </aside>
+
+    <!-- Drawer -->
+    <aside id="drawer" class="offcanvas show offcanvas-start position-static h-100" data-bs-scroll="true"
+        data-bs-backdrop="false" tabindex="-1" aria-labelledby="drawerLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="drawerLabel">Popout Label</h5>
+
+            <button type="button" class="btn text-reset" data-bs-dismiss="offcanvas" aria-label="Collapse drawer"
+                data-bs-toggle="tooltip" title="Collapse drawer">
+                <i class="fa-solid fa-angle-left"></i>
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, natus ipsa sed autem aperiam
+                repudiandae
+                totam laborum hic incidunt illum vitae facilis vel nulla, accusantium molestias? Saepe doloribus in
+                natus.
+            </p>
+
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search for a recipe!" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Content -->
+    <div id="content" class="flex-fill pt-3">
+        <main class="container">
+            <section id="recipes" class="container">
+                <h2 class="text-center">Grocery List</h2>
+
+                
+            </section>
+        </main>
+    </div>
+
+    <!-- JS Libraries -->
+    <!-- # Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="/scripts/main.js"></script>
+</body>
+
+</html>

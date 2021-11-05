@@ -1,0 +1,22 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Quattrocento', serif;
+}
+
+input {
+    border-radius: 0.5em !important;
+}
+
+button {
+    border-radius: 0.5em !important;
+}

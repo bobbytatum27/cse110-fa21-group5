@@ -1,0 +1,39 @@
+{
+    "short_name": "Recipe Manager",
+    "name": "Recipe Manager: Keep your cooking journey organized!",
+    "icons": [
+        {
+            "src": "/images/wave-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#2A52BE",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#2A52BE",
+    "shortcuts": [
+        {
+            "name": "Template page including HTML structure & libraries",
+            "short_name": "Template page",
+            "description": "Template page to copy for new HTML views.",
+            "url": "/template.html?source=pwa",
+            "icons": [
+                {
+                    "src": "/images/wave-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "description": "Recipe manager built by Team Ocean.",
+    "screenshots": [
+        {
+            "src": "/images/wave-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "docs": "https://web.dev/add-manifest/"
+}
