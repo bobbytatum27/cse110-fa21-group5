@@ -60,6 +60,10 @@
 
 ### Front-end
 
+-   Use VS Code's built in [Emmet](https://code.visualstudio.com/docs/editor/emmet) feature to quickly create new tabs
+    -   Press Tab after writing a selector to create the element.
+        -   Example: Pressing Tab after typing `a#submitBtn.btn.btn-primarry` will create an `<a>` element with the respective id and classes.
+    -   Emmet also has a shortcut for creating placeholder text: Press Tab after typing `lorem`.
 -   Use absolute paths starting with `/` for internal links in HTML (ex: `/images/favicon.ico`)
 -   If an element has an `id`, make sure there is only one, and that the `id` is the first attribute in the opening tag.
 -   When using Bootstrap classes, try to put them in this order in the class list: `Component -> Alignment/Structure -> Styling -> Spacing`
@@ -72,5 +76,7 @@
 
 ## 🗒️ Resources
 
+-	[GitHub Repo Issues](https://github.com/cse110-fa21-group5/cse110-fa21-group5/issues)
+-	[GitHub Project Board](https://github.com/orgs/cse110-fa21-group5/projects/1/views/1)
 -   [Bootstrap 5.1 Docs (use the search bar!)](https://getbootstrap.com/docs/5.1)
 -   [Font Awesome 6.0 Icon Gallery](https://fontawesome.com/v6.0/icons?m=free)
