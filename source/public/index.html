@@ -67,7 +67,7 @@
     <aside id="drawer" class="offcanvas offcanvas-start show position-static h-100" data-bs-scroll="true"
         data-bs-backdrop="false" tabindex="-1" aria-labelledby="drawerLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="drawerLabel">Popout Label</h5>
+            <h5 class="offcanvas-title" id="drawerLabel">Viewing Recipes</h5>
 
             <button type="button" class="btn text-reset" data-bs-dismiss="offcanvas" aria-label="Collapse drawer"
                 data-bs-toggle="tooltip" title="Collapse drawer">
@@ -84,6 +84,12 @@
                 natus.
             </p>
 
+            <h6>Type</h6>
+            <!-- TODO: List for different main filters -->
+
+            <h6>Filtering</h6>
+            <!-- TODO: System for filtering -->
+
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search for a recipe!" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
@@ -98,30 +104,44 @@
                 <h2 class="text-center">Recipes</h2>
 
                 <div id="cardGrid" class="row">
+                    <!-- TODO: Add more cards & replace card image -->
+                    <!-- Card 1 -->
                     <div class="col-xl-4">
+                        <!-- TODO: Spice up recipe card: Cook time, rating, ingredients, organization, author, etc. -->
                         <!-- Recipe Card -->
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
+                                    <!-- TODO: Find a nicer image for a recipe -->
                                     <img src="/images/wave-192.png" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
+                                        <!-- Card Body: Put all content in here -->
                                         <h5 class="card-title">
                                             <a href="/recipe.html">Recipe title</a>
                                         </h5>
-                                        <p class="card-text">
+
+                                        <p>
                                             This is a card to represent a recipe.
                                         </p>
-                                        <p class="card-text">
-                                            <small class="text-muted">Last updated 3 mins ago</small>
+
+                                        <p>
+                                            <small class="cook-time text-muted">50 min</small>
+                                        </p>
+
+                                        <p class="ingredients text-truncate">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aperiam aut?
+                                            Vero est at nam nemo eius aut, assumenda suscipit laudantium aperiam
+                                            necessitatibus incidunt dignissimos! Iure nihil voluptatem repellendus
+                                            fugit.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
 
             </section>
