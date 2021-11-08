@@ -61,44 +61,318 @@
     </aside>
 
     <!-- Drawer (default: hidden) -->
-    <aside id="drawer" class="offcanvas offcanvas-start h-100" data-bs-scroll="true"
-        data-bs-backdrop="false" tabindex="-1" aria-labelledby="drawerLabel">
+    <aside id="drawer" class="offcanvas offcanvas-start h-100" data-bs-scroll="true" data-bs-backdrop="false"
+        tabindex="-1" aria-labelledby="drawerLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="drawerLabel">Viewing a Recipe</h5>
+            <h5 class="offcanvas-title" id="drawerLabel">Viewing & Editing a Recipe</h5>
 
-            <button type="button" class="btn text-reset" data-bs-dismiss="offcanvas" aria-label="Collapse drawer"
-                data-bs-toggle="tooltip" title="Collapse drawer">
+            <button type="button" id="collapseBtn" class="btn text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Collapse drawer" data-bs-toggle="tooltip" title="Collapse drawer">
                 <i class="fa-solid fa-angle-left"></i>
             </button>
 
         </div>
 
         <div class="offcanvas-body">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, natus ipsa sed autem aperiam
-                repudiandae
-                totam laborum hic incidunt illum vitae facilis vel nulla, accusantium molestias? Saepe doloribus in
-                natus.
-            </p>
+            <!-- Edit Title -->
+            <div class="mb-3">
+                <label for="titleInput" class="form-label">Title</label>
+                <input type="text" class="form-control" id="titleInput" value="Shakshuka">
+            </div>
 
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search for a recipe!" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <!-- Edit Ingredients & Steps -->
+            <div id="editAccordion" class="accordion mb-3">
+                <!-- Edit Recipe Facts -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="editFactsLabel">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#editFactsCollapse" aria-expanded="false" aria-controls="editFactsCollapse">
+                            Edit Recipe Facts
+                        </button>
+                    </h2>
+                    <div id="editFactsCollapse" class="accordion-collapse collapse" aria-labelledby="editFactsLabel">
+                        <div class="accordion-body">
+                            <!-- Edit Tags -->
+                            <div class="mb-3">
+                                <label for="tagsInput" class="form-label">
+                                    <i class="fa-solid fa-tags"></i> Tags
+                                </label>
+                                <input type="text" class="form-control" id="tagsInput" value="Holiday, Snack">
+                            </div>
+
+                            <!-- Edit Prep Time -->
+                            <div class="mb-3">
+                                <label for="prepTimeInput" class="form-label">
+                                    <i class="fa-regular fa-clock"></i> Prep Time (min)
+                                </label>
+                                <input type="number" class="form-control" id="prepTimeInput" value="10" min="1"
+                                    step="5">
+                            </div>
+
+                            <!-- Edit Cook Time -->
+                            <div class="mb-3">
+                                <label for="cookTimeInput" class="form-label">
+                                    <i class="fa-regular fa-clock"></i> Cook Time (min)
+                                </label>
+                                <input type="number" class="form-control" id="cookTimeInput" value="30" min="1"
+                                    step="5">
+                            </div>
+
+
+                            <!-- Edit Total Time -->
+                            <div class="mb-3">
+                                <label for="totalTimeInput" class="form-label">
+                                    <i class="fa-solid fa-clock"></i> Total Time (min)
+                                </label>
+                                <input type="number" class="form-control" id="totalTimeInput" value="40" min="1"
+                                    step="5">
+                            </div>
+
+                            <!-- Edit Tags -->
+                            <div class="mb-3">
+                                <label for="difficultyInput" class="form-label">
+                                    <i class="fa-solid fa-chart-bar"></i> Difficulty
+                                </label>
+                                <input type="text" class="form-control" id="difficultyInput" value="Hard">
+                            </div>
+
+                            <!-- Edit Servings -->
+                            <div class="mb-3">
+                                <label for="servingsInput" class="form-label">
+                                    <i class="fa-solid fa-utensils"></i> Servings
+                                </label>
+                                <input type="number" class="form-control" id="servingsInput" value="5" min="1" step="1">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Ingredients -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="editIngredientsLabel">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#editIngredientsCollapse" aria-expanded="false"
+                            aria-controls="editIngredientsCollapse">
+                            Edit Ingredients
+                        </button>
+                    </h2>
+                    <div id="editIngredientsCollapse" class="accordion-collapse collapse"
+                        aria-labelledby="editIngredientsLabel">
+                        <div class="accordion-body">
+                            <textarea id="" class="w-100" name="" rows="10">
+12 large eggs
+4 small eggs
+1 red fish
+2 blue fish
+1 slice good melting cheese, such as American, cheddar, or homemade melting cheese
+Kosher salt and freshly ground black pepper</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Steps -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="editStepsLabel">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#editStepsCollapse" aria-expanded="false" aria-controls="editStepsCollapse">
+                            Edit Steps
+                        </button>
+                    </h2>
+                    <div id="editStepsCollapse" class="accordion-collapse collapse" aria-labelledby="editStepsLabel">
+                        <div class="accordion-body">
+                            <textarea id="" class="w-100" name="" rows="10">
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci doloremque dolor, tempore laborum fuga omnis! Quas, tenetur iste accusantium qui error adipisci molestias similique, illum dolorum assumenda ipsam mollitia dolores?
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corporis voluptas quos veniam voluptatibus, fugit fugiat ipsa voluptates exercitationem voluptatem. Cum quae nisi veniam eum vel ratione facere soluta.
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corporis voluptas quos veniam voluptatibus, fugit fugiat ipsa voluptates exercitationem voluptatem. Cum quae nisi veniam eum vel ratione facere soluta.
+</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Image -->
+            <div class="mb-3">
+                <label for="imageInput" class="form-label">Image</label>
+                <input class="form-control" type="file" id="imageInput">
+            </div>
+
+            <!-- Edit Description -->
+            <div class="mb-3">
+                <label for="descriptionInput" class="form-label">Description</label>
+                <textarea class="form-control" id="descriptionInput" rows="5">Recipe details: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui optio eligendi provident, tempora minima natus, blanditiis distinctio autem quo dolorum aliquam explicabo minus incidunt perferendis quam expedita sit et illo!
+                </textarea>
+            </div>
+
+            <!-- Edit Source -->
+            <div class="mb-3">
+                <label for="sourceInput" class="form-label">Source (Author or Organization)</label>
+                <input type="text" class="form-control" id="sourceInput" value="Serious Eats">
+            </div>
+
+            <!-- Edit Link -->
+            <div class="mb-3">
+                <label for="urlInput" class="form-label">Source link (URL)</label>
+                <input type="text" class="form-control" id="urlInput" value="https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab">
+            </div>
         </div>
     </aside>
 
     <!-- Content -->
     <div id="content" class="flex-fill pt-3">
-        <main class="container gx-5">
+        <main class="container-md">
             <section id="recipe" class="container text-center">
-                <h2 class="text-center">Recipe Title</h2>
+                <h2 class="mb-1">Shakshuka</h2>
+                <small>
+                    <span id="source">Serious Eats</span>, 
+                    <a href="https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab" id="url" target="_blank">Link</a>
+                </small>
 
-                <p>
-                    Recipe details
+                <!-- Recipe Facts -->
+                <article id="factsDiv" class="d-grid justify-content-center mb-3">
+                    <ul id="facts" class="list-group list-group-horizontal-md">
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-tags"></i> <span id="tags" class="fst-italic">Holiday, Snack</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-regular fa-clock"></i> <b>Prep:</b> <span id="prepTime">10 min</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-regular fa-clock"></i> <b>Cook:</b> <span id="cookTime">30 min</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-clock"></i> <b>Total:</b> <span id="totalTime">40 min</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-chart-bar"></i> <b>Difficulty:</b> <span id="difficulty">Hard</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-utensils"></i> <b>Servings:</b> <span id="servings">5</span>
+                            &nbsp;
+                            <a class="text-primary" href="#"><i class="fa-solid fa-sort"></i></a>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Nutrition -->
+                <article id="nutritionDiv" class="mb-3">
+                    <a class="text-decoration-none fw-bold" href="#nutritionInfo" role="button"
+                        data-bs-toggle="collapse" aria-controls="nutritionInfo">
+                        Expand nutrition <i class="fa-solid fa-caret-down"></i>
+                    </a>
+                    <div id="nutritionInfo" class="collapse">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <b>Calories:</b> <span class="nutrition-value">866 kcal</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Carbohydrates:</b> <span class="nutrition-value">55 g</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Cholesterol:</b> <span class="nutrition-value">168 mg</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Fiber:</b> <span class="nutrition-value">2 g</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Fat:</b> <span class="nutrition-value">46 g</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Unsaturated Fat:</b> <span class="nutrition-value">0 g</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Saturated Fat:</b> <span class="nutrition-value">20 g</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Protein:</b> <span class="nutrition-value">54 g</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Sodium:</b> <span class="nutrition-value">2003 mg</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <b>Sugar:</b> <span class="nutrition-value">13 g</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Description -->
+                <p id="description" class="mb-3">
+                    Recipe details: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui optio eligendi
+                    provident, tempora minima natus, blanditiis distinctio autem quo dolorum aliquam explicabo minus
+                    incidunt perferendis quam expedita sit et illo!
                 </p>
+
+                <!-- Recipe Image -->
+                <img id="recipeImg" class="img-fluid mb-4"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Shakshuka8.jpg/1920px-Shakshuka8.jpg"
+                    alt="Image for recipe">
+
+                <!-- Ingredients & Steps -->
+                <div class="row">
+                    <!-- Ingredients -->
+                    <article id="ingredientsDiv" class="col-4 text-start">
+                        <h3 class="mb-3">
+                            Ingredients
+                            <button class="btn border ms-md-2" data-bs-toggle="tooltip"
+                                title="Choose items to add to grocery list">
+                                <i class="fa-solid fa-plus"></i>
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </button>
+                        </h3>
+
+                        <ul id="ingredients" class="list-unstyled">
+                            <li><span class="amount fw-bold">12</span> <span class="ingredient">large eggs</span></li>
+                            <li><span class="amount fw-bold">4</span> <span class="ingredient">small eggs</span></li>
+                            <li><span class="amount fw-bold">1</span> <span class="ingredient">red fish</span></li>
+                            <li><span class="amount fw-bold">2</span> <span class="ingredient">blue fish</span></li>
+                            <li>
+                                <span class="amount fw-bold">1</span> <span class="ingredient">slice good melting
+                                    cheese, such as American, cheddar, or homemade melting cheese</span>
+                            </li>
+                            <li>Kosher salt and freshly ground black pepper</li>
+                        </ul>
+                    </article>
+
+                    <!-- Steps -->
+                    <article id="stepsDiv" class="col-8 text-start border-start ">
+                        <h3 class="mb-3">Steps</h3>
+
+                        <ol id="steps">
+                            <li class="active">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci doloremque dolor,
+                                tempore laborum fuga omnis! Quas, tenetur iste accusantium qui error adipisci molestias
+                                similique, illum dolorum assumenda ipsam mollitia dolores?
+                            </li>
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corporis
+                                voluptas quos veniam voluptatibus, fugit fugiat ipsa voluptates exercitationem
+                                voluptatem. Cum quae nisi veniam eum vel ratione facere soluta.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corporis
+                                voluptas quos veniam voluptatibus, fugit fugiat ipsa voluptates exercitationem
+                                voluptatem. Cum quae nisi veniam eum vel ratione facere soluta.
+                            </li>
+                        </ol>
+                    </article>
+                </div>
             </section>
         </main>
+
+        <div id="cornerBtns" class="d-flex flex-column gap-2">
+            <button id="editBtn" class="btn btn-warning border rounded-pill py-2" data-bs-toggle="offcanvas" data-bs-target="#drawer"
+            aria-controls="drawer"
+                data-bs-placement="left" title="Edit recipe">
+                <i class="fa-solid fa-pencil"></i>
+            </button>
+            <button id="deleteBtn" class="btn btn-danger border rounded-pill py-2" data-bs-toggle="tooltip"
+                data-bs-placement="left" title="Delete recipe">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
     </div>
 
     <!-- JS Libraries -->

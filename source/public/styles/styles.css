@@ -1,7 +1,8 @@
+/* ---------- GLOBAL STYLES ---------- */
 html,
 body {
-    height: 100%;
-    font-family: 'Nunito', sans-serif;
+	height: 100%;
+	font-family: 'Nunito', sans-serif;
 }
 
 h1,
@@ -10,13 +11,104 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Quattrocento', serif;
+	font-family: 'Quattrocento', serif;
 }
 
-input {
-    border-radius: 0.5em !important;
+h1,
+h2,
+h3 {
+	font-weight: bold;
 }
 
-button {
-    border-radius: 0.5em !important;
+input,
+textarea {
+	border-radius: 0.5em !important;
+}
+
+textarea {
+	padding: 1em;
+}
+
+label {
+	font-weight: bold;
+}
+
+button:not(.accordion-button) {
+	border-radius: 0.5em;
+}
+
+button.accordion-button {
+	font-weight: bold;
+}
+
+/* ---------- RECIPE PAGE ---------- */
+#facts li {
+	border: none;
+}
+
+#facts li + li {
+	border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#recipeImg {
+	max-height: 33vh;
+}
+
+#ingredients li {
+	margin-bottom: 1rem;
+}
+
+#steps li {
+	padding: 1rem;
+}
+
+#steps li.active {
+	font-weight: bold;
+	background-color: rgb(240, 241, 242);
+}
+
+#cornerBtns {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 1rem;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+/* --- Minimum (Bootstrap breakpoints) --- */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* --- Maximum --- */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+	#facts li + li {
+		border-left: none;
+		border-top: 1px solid rgba(0, 0, 0, 0.125);
+	}
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
 }
