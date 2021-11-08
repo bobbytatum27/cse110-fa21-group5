@@ -3,11 +3,23 @@
 // Page Initialization
 window.addEventListener('DOMContentLoaded', function () {
 	/* Initialize tooltips. */
-	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"], #expandBtn'));
-	tooltipTriggerList.map(function (tooltipTriggerEl) {
+	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"], #editBtn'));
+
+	// Sidebar tooltips default right
+	// TODO: #drawer -> #collapseBtn
+	const sidebarTooltipTriggerList = [].slice.call(
+		document.querySelectorAll('#sidebar [data-bs-toggle="tooltip"], #drawer [data-bs-toggle="tooltip"], #expandBtn')
+	);
+	sidebarTooltipTriggerList.map(function (tooltipTriggerEl) {
 		return new bootstrap.Tooltip(tooltipTriggerEl, {
 			placement: 'right',
 		});
+	});
+
+	// Other tooltips
+	const otherTooltipTriggerList = tooltipTriggerList.filter((element) => !sidebarTooltipTriggerList.includes(element));
+	otherTooltipTriggerList.map(function (tooltipTriggerEl) {
+		return new bootstrap.Tooltip(tooltipTriggerEl);
 	});
 
 	/* Toggle expand button visibility based on drawer visibility. */
