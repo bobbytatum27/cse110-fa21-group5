@@ -365,11 +365,15 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corpor
         </main>
 
         <div id="cornerBtns" class="d-flex flex-column gap-2">
-            <button id="editBtn" class="btn btn-warning border rounded-pill py-2" data-bs-toggle="offcanvas"
+            <button id="addBtn" class="btn btn-primary rounded-pill py-2" data-bs-toggle="tooltip"
+                data-bs-placement="left" title="Add recipe">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button id="editBtn" class="btn btn-warning rounded-pill py-2" data-bs-toggle="offcanvas"
                 data-bs-target="#drawer" aria-controls="drawer" data-bs-placement="left" title="Edit recipe">
                 <i class="fa-solid fa-pencil"></i>
             </button>
-            <button id="deleteBtn" class="btn btn-danger border rounded-pill py-2" data-bs-toggle="tooltip"
+            <button id="deleteBtn" class="btn btn-danger rounded-pill py-2" data-bs-toggle="tooltip"
                 data-bs-placement="left" title="Delete recipe">
                 <i class="fa-solid fa-trash"></i>
             </button>

@@ -8,6 +8,7 @@
 		"ecmaVersion": "latest"
 	},
 	"rules": {
+		"brace-style": ["error", "1tbs"],
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
 		"quotes": [

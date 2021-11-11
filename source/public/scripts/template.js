@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	console.log(button);
 
-	// Upon button click, call someFunction()
+	// Upon button click, call someFunction()	
 	button.addEventListener('click', function () {
 		someFunction(this);
 	});
