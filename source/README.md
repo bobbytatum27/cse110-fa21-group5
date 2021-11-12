@@ -9,8 +9,8 @@
 
 1. Make sure you have the latest version of `main` by running `git pull origin main`
 2. Create & checkout a new branch to work on with this command & naming scheme:
-    - `git checkout -b [firstname]+[partnername]-[issue-topic]` (example branch name: `adory+hanming-api-testing`)
-3. Work on & change ONLY the files that correspond to your issue/topic. If you notice minor discrepancies in unrelated files, create GitHub issues for them.
+    - `git checkout -b [firstname]+[partnername]-[feature-topic]` (example branch name: `adory+hanming-api-testing`)
+3. Work on & change ONLY the files that correspond to your feature/topic. If you notice minor discrepancies in unrelated files, create GitHub issues for them.
 4. Make sure you use Prettier to reformat style and run `eslint --fix` in `/source` to lint your code before committing. (Discussed in Coding section below)
 5. Add & commit your files with VS Code or Git commands. Your commit message should follow this format: `Add/Update/[Verb] [things changed] (#[issue number])"`.
     - Example: `Update style guidelines (#2)`
