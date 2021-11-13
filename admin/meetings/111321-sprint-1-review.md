@@ -34,16 +34,17 @@
 
 ### Current Meeting
 
-- For the sprint review meeting, we will be going over sprint 1 progress.
-- For the retrospective, share our thoughts and reviewing the team’s general mental/emotional levels of the sprint to inform any potential changes for sprint 2.
+- we will be going over sprint 1 progress.
 
 ### For next time!
 
 ---
 
-## Section 1
+## sprint review
 
----
+- Go over work accomplishment
+    - screen captures or demo videos
+    - do not criticize or correct the agile process
 
 ## Additional Remarks
 
