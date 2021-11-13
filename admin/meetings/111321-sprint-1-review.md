@@ -1,4 +1,4 @@
-# Sprint Review / Retrospective Meeting
+# Sprint Review Meeting
 
 ## Info
 
