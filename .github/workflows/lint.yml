@@ -3,15 +3,17 @@ name: linter
 on: push
 
 jobs:
-  super-lint:
-    name: Lint code base
+  eslint:
+    name: Lint js files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
+      - name: Run ESLint
+        uses: stefanoeb/eslint-action@1.0.2
+        with:
+          files: source/public/scripts/
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
