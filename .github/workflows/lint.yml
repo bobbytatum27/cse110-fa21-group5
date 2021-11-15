@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         
       - name: Run ESLint
-        uses: stefanoeb/eslint-action@1.0.2
+        uses: github/super-linter@v4
         with:
           files: source/public/scripts/
         env:
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
