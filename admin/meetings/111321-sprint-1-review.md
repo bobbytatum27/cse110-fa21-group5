@@ -10,15 +10,15 @@
 
 ### Attendance
 
--   [ ] Adory
--   [ ] Hanming
+-   [x] Adory
+-   [x] Hanming
 -   [ ] Steven
 -   [ ] Royce
--   [ ] Divneet
--   [ ] Julian
--   [ ] Xuan
+-   [x] Divneet
+-   [x] Julian
+-   [x] Xuan
 -   [ ] Robert (Bobby)
--   [ ] Sizhe (Chris)
+-   [x] Sizhe (Chris)
 
 ---
 
@@ -31,20 +31,68 @@
     -   Canvas assignments
     -   Priority tasks
     -   Project milestones
+-
 
 ### Current Meeting
 
-- we will be going over sprint 1 progress.
+-   We will be going over sprint 1 progress.
 
 ### For next time!
 
+-   Running Retrospectives activities.
+
 ---
 
-## sprint review
+## Sprint review
 
-- Go over work accomplishment
-    - screen captures or demo videos
-    - do not criticize or correct the agile process
+-   Go over work accomplishment
+    -   Screen captures or demo videos
+    -   Do not criticize or correct the agile process
+-   Sprint 1
+    -   Brainstorming
+        -   User personas
+        -   Problem and solution
+        -   Target audience
+        -   Features
+    -   Finished project pitch
+    -   Preparation for development
+        -   Got guidelines and repo structure figured out
+        -   Have some basic views for front-end
+
+---
+
+## Aside: Project Roadmap
+
+### Week 8
+
+-   Core features & functionality
+    -   CRUD
+        -   Local storage
+    -   Dynamic recipe integration from gathered recipe data
+    -   API exploration
+        -   Getting started w/ main add-on features
+-   Basic pipeline
+
+### Week 9
+
+-   Further pipeline
+-   Finalizing main add-on features
+-   Adding styling
+-   Quality of life functionality
+    -   Serving size scaling
+    -   Bookmarking
+-   Extra add-on features
+    -   Speech recognition w/ Mozilla Web API
+    -   Sorting
+    -   Recipe reflections
+
+### Week 10
+
+-   Testing & fixing bugs (Quality Assurance)
+-   Refactoring
+-   Extra features
+
+---
 
 ## Additional Remarks
 
@@ -58,4 +106,4 @@
 
 ---
 
-Meeting finish time:
+Meeting finish time: 11:30am (30 min)
