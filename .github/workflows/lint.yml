@@ -15,6 +15,5 @@ jobs:
         with:
           files: source/public/scripts/
         env:
-          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
