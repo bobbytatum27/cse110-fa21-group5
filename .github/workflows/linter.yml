@@ -38,10 +38,9 @@ jobs:
           # Configuration
           LINTER_RULES_PATH: source
           VALIDATE_ALL_CODEBASE: false
-          FILTER_REGEX_INCLUDE: .*source/.*
+          # debug: FILTER_REGEX_INCLUDE: .*source/.*
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LOG_LEVEL: DEBUG
 
           # Validate only JS files
           VALIDATE_JAVASCRIPT_ES: true
