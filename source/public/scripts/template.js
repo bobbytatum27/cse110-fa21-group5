@@ -1,4 +1,5 @@
 // Variables
+/** @const @private {string} JSDoc comment for this constant. */
 const SOME_CONSTANT = 5;
 let someVariable = 'USE SINGLE QUOTES';
 let someString = `template string w/ backticks if using '' is needed or for formatting w/ ${SOME_CONSTANT}`;
