@@ -11,7 +11,7 @@
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 #
 
-name: Lint JS
+name: Linter
 
 # Start job on pushes with changes to JS files
 on: 

@@ -1,4 +1,5 @@
 /* global bootstrap */ // Tell ESLint to ignore undefined `bootstrap`.
+// main.js
 
 // Page Initialization
 window.addEventListener('DOMContentLoaded', async function () {
