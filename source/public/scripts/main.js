@@ -1,11 +1,42 @@
 /* global bootstrap */ // Tell ESLint to ignore undefined `bootstrap`.
 
 // Page Initialization
-window.addEventListener('DOMContentLoaded', function () {
-	/* Initialize tooltips. */
+window.addEventListener('DOMContentLoaded', async function () {
+	initializeServiceWorker();
+
+	// Initialize front-end
+	initializeTooltips();
+	initializeDrawer();
+});
+
+/**
+ * Detects if there's a service worker, then loads it and begins the process
+ * of installing it and getting it running.
+ */
+function initializeServiceWorker() {
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function () {
+			navigator.serviceWorker.register('service-worker.js').then(
+				function (registration) {
+					// Registration was successful
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				},
+				function (err) {
+					// Registration failed
+					console.log('ServiceWorker registration failed: ', err);
+				}
+			);
+		});
+	}
+}
+
+/**
+ * Initialize tooltips.
+ */
+function initializeTooltips() {
 	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"], #editBtn'));
 
-	// Sidebar tooltips default right
+	// Sidebar tooltips should default right
 	// TODO: #drawer -> #collapseBtn
 	const sidebarTooltipTriggerList = [].slice.call(
 		document.querySelectorAll('#sidebar [data-bs-toggle="tooltip"], #drawer [data-bs-toggle="tooltip"], #expandBtn')
@@ -17,12 +48,18 @@ window.addEventListener('DOMContentLoaded', function () {
 	});
 
 	// Other tooltips
-	const otherTooltipTriggerList = tooltipTriggerList.filter((element) => !sidebarTooltipTriggerList.includes(element));
+	const otherTooltipTriggerList = tooltipTriggerList.filter(
+		(element) => !sidebarTooltipTriggerList.includes(element)
+	);
 	otherTooltipTriggerList.map(function (tooltipTriggerEl) {
 		return new bootstrap.Tooltip(tooltipTriggerEl);
 	});
+}
 
-	/* Toggle expand button visibility based on drawer visibility. */
+/**
+ * Toggle expand button visibility based on drawer visibility.
+ */
+function initializeDrawer() {
 	const drawerOffcanvas = document.getElementById('drawer');
 	const expandBtn = document.getElementById('expandBtn');
 
@@ -37,4 +74,4 @@ window.addEventListener('DOMContentLoaded', function () {
 		drawerOffcanvas.classList.add('position-static');
 		expandBtn.classList.add('invisible');
 	});
-});
+}
