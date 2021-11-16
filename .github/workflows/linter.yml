@@ -17,6 +17,7 @@ name: Lint JS
 on: 
   push:
     paths:
+      - '.github/workflows/**'
       - 'source/public/**.js'
 
 jobs:
