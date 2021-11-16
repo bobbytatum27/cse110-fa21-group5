@@ -76,7 +76,7 @@
 
 ## 🗒️ Resources
 
--	[GitHub Repo Issues](https://github.com/cse110-fa21-group5/cse110-fa21-group5/issues)
--	[GitHub Project Board](https://github.com/orgs/cse110-fa21-group5/projects/1/views/1)
+-   [GitHub Repo Issues](https://github.com/cse110-fa21-group5/cse110-fa21-group5/issues)
+-   [GitHub Project Board](https://github.com/orgs/cse110-fa21-group5/projects/1/views/1)
 -   [Bootstrap 5.1 Docs (use the search bar!)](https://getbootstrap.com/docs/5.1)
 -   [Font Awesome 6.0 Icon Gallery](https://fontawesome.com/v6.0/icons?m=free)

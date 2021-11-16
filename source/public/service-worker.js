@@ -1,27 +1,12 @@
 /* eslint-disable no-undef */
-// sw.js - This file needs to be in the root of the directory to work,
-//         so do not move it next to the other scripts
+// service-worker.js
 
-const CACHE_NAME = 'recipe-manager-cache';
+/** @const @private {string} Cache name. */
+const CACHE_NAME = 'recipe-manager';
 
 // Once the service worker has been installed, feed it some initial URLs to cache
 self.addEventListener('install', function (event) {
-	/**
-	 * TODO - Part 2 Step 2
-	 * Create a function as outlined above
-	 */
-	const urlsToCache = [
-		'/',
-		/*
-        '/assets/components/RecipeCard.js',
-        '/assets/components/RecipeExpand.js',
-        '/assets/scripts/Router.js',
-        '/assets/styles/main.css',
-        '/assets/scripts/main.js',
-        '/assets/images/icons/arrow-down.png',
-        '/favicon.ico'
-        */
-	];
+	const urlsToCache = ['/'];
 
 	// Perform install steps
 	event.waitUntil(
@@ -38,41 +23,11 @@ self.addEventListener('install', function (event) {
  * go through this service worker
  */
 self.addEventListener('activate', function (event) {
-	/**
-	 * TODO - Part 2 Step 3
-	 * Create a function as outlined above, it should be one line
-	 */
-
-	// One-liner:
-	// event.waitUntil(clients.claim());
-	// We chose to use Google's implementation from the tutorial below since it seemed more thorough.
-
 	event.waitUntil(clients.claim());
-
-	/*
-    var cacheAllowlist = [CACHE_NAME];
-
-    event.waitUntil(
-        caches.keys().then(function (cacheNames) {
-            return Promise.all(
-                cacheNames.map(function (cacheName) {
-                    if (cacheAllowlist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
-    );
-    */
 });
 
 // Intercept fetch requests and store them in the cache
 self.addEventListener('fetch', function (event) {
-	/**
-	 * TODO - Part 2 Step 4
-	 * Create a function as outlined above
-	 *
-	 */
 	event.respondWith(
 		caches.match(event.request).then(function (response) {
 			// Cache hit - return response
