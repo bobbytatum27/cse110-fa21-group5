@@ -37,8 +37,7 @@ jobs:
         env:          
           # Configuration
           LINTER_RULES_PATH: source
-          VALIDATE_ALL_CODEBASE: false
-          # debug: FILTER_REGEX_INCLUDE: .*source/.*
+          FILTER_REGEX_INCLUDE: .*source/.*
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
