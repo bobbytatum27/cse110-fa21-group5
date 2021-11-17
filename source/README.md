@@ -2,6 +2,8 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/cse110-fa21-group5/cse110-fa21-group5/badge?s=5332332ef2c647f086442b3584693dbe4a0b2068)](https://www.codefactor.io/repository/github/cse110-fa21-group5/cse110-fa21-group5)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0552da19-8d05-408c-963e-04f9ea60650d/deploy-status)](https://team-ocean-stage.netlify.app/)
+
 ## 🚀 Getting Started
 
 ### Git Commit Guidelines
@@ -20,6 +22,7 @@
 6. If you want to update the remote repostiory, push your changes.
 7. If you then want to merge your changes with the main branch, create a pull request to your branch
    [here](https://github.com/cse110-fa21-group5/cse110-fa21-group5/pulls).
+    - Netlify should
 
 ### Coding Environment
 
