@@ -1,5 +1,7 @@
 # Project Source Code
 
+[![CodeFactor](https://www.codefactor.io/repository/github/cse110-fa21-group5/cse110-fa21-group5/badge?s=5332332ef2c647f086442b3584693dbe4a0b2068)](https://www.codefactor.io/repository/github/cse110-fa21-group5/cse110-fa21-group5)
+
 ## 🚀 Getting Started
 
 ### Git Commit Guidelines
