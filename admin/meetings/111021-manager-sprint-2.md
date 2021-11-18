@@ -6,7 +6,7 @@
 
 -   Group 5
 -   Wednesday, November 10, 2021
--   11am @ https://ucsd.zoom.us/my/adory
+-   11am @ https://ucsd.zoom.us/my/sanatbhandarkar
 
 ### Attendance
 
