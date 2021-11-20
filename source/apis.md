@@ -126,10 +126,88 @@ more parameters in the docs
 }
 ```
 
+### [Get Recipe Information](https://spoonacular.com/food-api/docs#Get-Recipe-Information)
+### `HTTP GET`
+Use a recipe id to get full information about a recipe, such as ingredients, nutrition, diet and allergen information, etc.
+
+### [Ingredient Search](https://spoonacular.com/food-api/docs#Ingredient-Search)
+### `HTTP GET`
+Search for simple whole foods (e.g. fruits, vegetables, nuts, grains, meat, fish, dairy etc.).
+
+### [Get Ingredient Information](https://spoonacular.com/food-api/docs#Get-Ingredient-Information)
+### `HTTP GET`
+Use an ingredient id to get all available information about an ingredient, such as its image and supermarket aisle.
+
 
 
 
 
 ## Add-on features (Should have)
 
+### [Get Similar Recipes](https://spoonacular.com/food-api/docs#Get-Similar-Recipes)
+### `HTTP GET`
+Find recipes which are similar to the given one.
+
+### [Get Ingredient Substitutes](https://spoonacular.com/food-api/docs#Get-Ingredient-Substitutes)
+### `HTTP GET`
+Search for substitutes for a given ingredient.
+
+
 ## Add-on features (Could have)
+
+### [Autocomplete Recipe Search](https://spoonacular.com/food-api/docs#Autocomplete-Recipe-Search)
+### `HTTP GET`
+Autocomplete a partial input to suggest possible recipe names.
+
+### [Autocomplete Ingredient Search](https://spoonacular.com/food-api/docs#Autocomplete-Ingredient-Search)
+### `HTTP GET`
+Autocomplete the entry of an ingredient.
+
+### [Search Grocery Products](https://spoonacular.com/food-api/docs#Search-Grocery-Products)
+### `HTTP GET`
+Search packaged food products, such as frozen pizza or Greek yogurt.
+
+### [Get Product Information](https://spoonacular.com/food-api/docs#Get-Product-Information)
+### `HTTP GET`
+Use a product id to get full information about a product, such as ingredients, nutrition, etc. The nutritional information is per serving.
+
+### [Classify Cuisine](https://spoonacular.com/food-api/docs#Classify-Cuisine)
+### `HTTP POST`
+Classify the recipe's cuisine.
+
+### [Analyze Recipe](https://spoonacular.com/food-api/docs#Analyze-Recipe)
+### `HTTP POST`
+This endpoint allows you to send raw recipe information, such as title, servings, and ingredients, to then see what we compute (badges, diets, nutrition, and more). This is useful if you have your own recipe data and want to enrich it with our semantic analysis.
+
+## Helpful endpoints
+
+### [Ingredients by ID](https://spoonacular.com/food-api/docs#Ingredients-by-ID)
+### `HTTP GET`
+
+Get a recipe's ingredient list.
+
+### [Nutrition by ID](https://spoonacular.com/food-api/docs#Nutrition-by-ID)
+### `HTTP GET`
+Get a recipe's nutrition widget data.
+
+### [Taste by ID](https://spoonacular.com/food-api/docs#Taste-by-ID)
+### `HTTP GET`
+Get a recipe's taste. The tastes supported are sweet, salty, sour, bitter, savory, and fatty. These tastes are between 0 and 100 while the spiciness value is in scoville on an open scale of 0 and above.
+
+Every ingredient has each of these values and it is weighted by how much they contribute to the recipe. Spiciness is taking the weight of the spicy ingredient and multiplying it with its scoville amount. Of course, taste is also very personal and it depends on how it is prepared so all of the values should only give you an indication of how the dish tastes.
+
+### [Get Analyzed Recipe Instructions](https://spoonacular.com/food-api/docs#Get-Analyzed-Recipe-Instructions)
+### `HTTP GET`
+Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and equipment required.
+
+### [Extract Recipe from Website](https://spoonacular.com/food-api/docs#Extract-Recipe-from-Website)
+### `HTTP GET`
+This endpoint lets you extract recipe data such as title, ingredients, and instructions from any properly formatted Website.
+
+### [Quick Answer](https://spoonacular.com/food-api/docs#Quick-Answer)
+### `HTTP GET`
+Answer a nutrition related natural language question.
+
+### [Talk to Chatbot](https://spoonacular.com/food-api/docs#Talk-to-Chatbot)
+### `HTTP GET`
+This endpoint can be used to have a conversation about food with the spoonacular chatbot. Use the "Conversation Suggests" endpoint to show your user what he or she can say.
