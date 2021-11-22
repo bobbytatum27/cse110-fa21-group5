@@ -3,7 +3,9 @@
 
 // Page Initialization
 window.addEventListener('DOMContentLoaded', async function () {
-	initializeServiceWorker();
+	if (window.location.protocol === 'https:') {
+		initializeServiceWorker();
+	}
 
 	// Initialize front-end
 	initializeTooltips();
@@ -35,10 +37,12 @@ function initializeServiceWorker() {
  * Initialize tooltips.
  */
 function initializeTooltips() {
-	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"], #editBtn'));
+	const tooltipTriggerList = [].slice.call(
+		document.querySelectorAll('[data-bs-toggle="tooltip"], #editBtn, #deleteBtn')
+	);
 
 	// Sidebar tooltips should default right
-	// TODO: #drawer -> #collapseBtn
+	// TODO: Add collapseBtn id to replace current #drawer usage
 	const sidebarTooltipTriggerList = [].slice.call(
 		document.querySelectorAll('#sidebar [data-bs-toggle="tooltip"], #drawer [data-bs-toggle="tooltip"], #expandBtn')
 	);
