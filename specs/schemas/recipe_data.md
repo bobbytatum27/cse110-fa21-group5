@@ -60,6 +60,18 @@ expected structure of each.
     Duration string
 - NutritionInformation: Object
     - see [this page](https://schema.org/NutritionInformation)
+    - fields
+        -`calories: Energy`
+        -`carbohydrateContent: Mass`
+        -`fatContent: Mass`
+        -`fiberContent: Mass`
+        -`proteinContent: Mass`
+        -`saturatedFatContent: Mass`
+        -`servingSize: Mass`
+        -`sodiumContent: Mass`
+        -`sugarContent: Mass`
+        -`transFatContent: Mass`
+        -`unsaturatedFatContent: Mass`
 - HowToStep
     - fields
         - `name: String`
@@ -68,3 +80,6 @@ expected structure of each.
 - VideoObject
     - see [this page](https://schema.org/VideoObject)
     - make sure the object has a url
+    - fields
+        -`thumbnail: ImageObject`
+        -`duration: Duration`
