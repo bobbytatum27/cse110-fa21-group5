@@ -2,7 +2,7 @@
 
 Recipes should be stored in JSON with the following key-value pairs. These value types are derived from
 [schema.org/DataType](https://schema.org/DataType).
-- `image: URL`
+- `image: String`
     - An image of the completed dish
     - Required: YES
 - `name: String`
@@ -46,3 +46,25 @@ Recipes should be stored in JSON with the following key-value pairs. These value
 See [Google's guide on recipe
 data](https://developers.google.com/search/docs/advanced/structured-data/recipe#recipe-properties) for more info on
 JSON-LD and these types.
+
+# Type Details
+For the types listed above (seen in the value slot of the key-value pairs), here you'll find more information about the
+expected structure of each.
+
+- Person: Object
+    - fields
+        - `name: String`
+- Duration: String
+    - a specially formatted string
+    - see [this wikipedia article](https://en.wikipedia.org/wiki/ISO_8601#Durations) for an explanation of an ISO 8601
+    Duration string
+- NutritionInformation: Object
+    - see [this page](https://schema.org/NutritionInformation)
+- HowToStep
+    - fields
+        - `name: String`
+        - `text: String`
+        - `image: String`
+- VideoObject
+    - see [this page](https://schema.org/VideoObject)
+    - make sure the object has a url
