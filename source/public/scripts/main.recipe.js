@@ -5,6 +5,7 @@ import { searchForKey } from './util.js';
 // ----- Variables -----
 /**
  * Retrieve GET queries for current recipe.
+ * /recipe.html?source=placeholder&id=index
  * See https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams
  */
 const params = new URL(document.location).searchParams;
@@ -77,13 +78,23 @@ function activateAddBtn() {
 }
 
 /**
+ * "Toggle speech commands" button logic.
+ */
+function activateSpeechBtn() {
+	const speechBtn = document.getElementById('speechBtn');
+	speechBtn.addEventListener('click', function () {
+		// TODO: Activate Web Speech API
+	});
+}
+
+/**
  * "Delete recipe" button logic.
  */
 function activateDeleteBtn() {
 	const deleteBtn = document.getElementById('confirmDeleteBtn');
 	deleteBtn.addEventListener('click', function () {
 		/**
-		 * Add recipe data to user recipes array.
+		 * Delete recipe data from user recipes array.
 		 */
 		// Retreive recipes array and remove recipe.
 		const userRecipes = JSON.parse(localStorage.getItem('recipes'));
@@ -192,6 +203,8 @@ console.log(`ID: ${id}`);
 // Log local storage
 console.group('Local storage');
 console.log(localStorage);
+console.log('User recipes (localStorage.recipes):');
+console.log(JSON.parse(localStorage.recipes));
 console.groupEnd('Local storage');
 
 // Validate recipe source and id
@@ -201,7 +214,7 @@ if (!source || isNaN(id)) {
 	/* CASE: Preset Recipe Source */
 
 	// Delete edit & delete corner buttons
-	deleteCornerBtns(['editBtn', 'deleteBtn']);
+	deleteCornerBtns(['speechBtn', 'editBtn', 'deleteBtn']);
 
 	// Activate add button
 	activateAddBtn();
@@ -226,6 +239,9 @@ if (!source || isNaN(id)) {
 
 	// Delete add corner button
 	deleteCornerBtns(['addBtn']);
+
+	// Activate speech butotn
+	activateSpeechBtn();
 
 	// Activate delete button
 	activateDeleteBtn();
