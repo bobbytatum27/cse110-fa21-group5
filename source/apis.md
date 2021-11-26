@@ -1,0 +1,213 @@
+# CalorieNinjas
+
+[Click here for the main website](https://calorieninjas.com/api)
+
+## Core features
+
+###  [/v1/nutrition](https://calorieninjas.com/api)
+### `HTTP GET`
+
+Get a detailed list of nutrition information for each item from an input text query.
+
+##### Parameters
+
+**`query`**  (required) - a string containing food or drink items. If you wish to calculate a specific quantity, you may prefix a quantity before an item. For example,  `3 tomatoes`  or  `1lb`  beef brisket. If no quantity is specified, the default quantity is  **100 grams**. Queries cannot exceed  **1500 characters**.
+
+##### Headers
+
+**`X-Api-Key`**  (required) - API Key associated with your account.
+
+##### Sample Request URL
+`https://api.calorieninjas.com/v1/nutrition?query=10oz onion and a tomato`
+
+##### Sample Request URL
+```java
+{
+  "items": [
+    {
+      "sugar_g": 13.3,
+      "fiber_g": 4,
+      "serving_size_g": 283.495,
+      "sodium_mg": 8,
+      "name": "onion",
+      "potassium_mg": 99,
+      "fat_saturated_g": 0.1,
+      "fat_total_g": 0.5,
+      "calories": 126.7,
+      "cholesterol_mg": 0,
+      "protein_g": 3.9,
+      "carbohydrates_total_g": 28.6
+    },
+    {
+      "sugar_g": 2.6,
+      "fiber_g": 1.2,
+      "serving_size_g": 100,
+      "sodium_mg": 4,
+      "name": "tomato",
+      "potassium_mg": 23,
+      "fat_saturated_g": 0,
+      "fat_total_g": 0.2,
+      "calories": 18.2,
+      "cholesterol_mg": 0,
+      "protein_g": 0.9,
+      "carbohydrates_total_g": 3.9
+    }
+  ]
+}
+```
+
+##### Code Example
+```javascript
+const request = require('request');
+var query = '3lb carrots and a chicken sandwich';
+request.get({
+  url: 'https://api.calorieninjas.com/v1/nutrition?query='+query,
+  headers: {
+    'X-Api-Key': 'YOUR_API_KEY'
+  },
+}, function(error, response, body) {
+  if(error) return console.error('Request failed:', error);
+  else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+  else console.log(body)
+});
+```
+
+# Spoonacular
+[Click here for the main website](https://spoonacular.com/food-api/docs)
+
+## Core features
+
+### [Search Recipes](https://spoonacular.com/food-api/docs#Search-Recipes-Complex)
+### `HTTP GET`
+Search through hundreds of thousands of recipes using advanced filtering and ranking. NOTE: This method combines searching by query, by ingredients, and by nutrients into one endpoint.
+
+`GET https://api.spoonacular.com/recipes/complexSearch`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`query`** | string | pasta |The (natural language) recipe search query. |
+| **`cuisine`** | string | italian |The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR'). See a full [list of supported cuisines](https://spoonacular.com/food-api/docs#Cuisines). |
+| **`diet`** | string | vegetarian |The diet for which the recipes must be suitable. See a full [list of supported diets](https://spoonacular.com/food-api/docs#Diets).|
+| **`maxReadyTime`** | number | 20 |The maximum time in minutes it should take to prepare and cook the recipe|
+more parameters in the docs
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2`
+
+##### Sample Request URL
+```json
+{
+    "offset": 0,
+    "number": 2,
+    "results": [
+        {
+            "id": 716429,
+            "title": "Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs",
+            "calories": 584,
+            "carbs": "84g",
+            "fat": "20g",
+            "image": "https://spoonacular.com/recipeImages/716429-312x231.jpg",
+            "imageType": "jpg",
+            "protein": "19g"
+        },
+        {
+            "id": 715538,
+            "title": "What to make for dinner tonight?? Bruschetta Style Pork & Pasta",
+            "calories": 521,
+            "carbs": "69g",
+            "fat": "10g",
+            "image": "https://spoonacular.com/recipeImages/715538-312x231.jpg",
+            "imageType": "jpg",
+            "protein": "35g"
+        }
+    ],
+    "totalResults": 86
+}
+```
+
+### [Get Recipe Information](https://spoonacular.com/food-api/docs#Get-Recipe-Information)
+### `HTTP GET`
+Use a recipe id to get full information about a recipe, such as ingredients, nutrition, diet and allergen information, etc.
+
+### [Ingredient Search](https://spoonacular.com/food-api/docs#Ingredient-Search)
+### `HTTP GET`
+Search for simple whole foods (e.g. fruits, vegetables, nuts, grains, meat, fish, dairy etc.).
+
+### [Get Ingredient Information](https://spoonacular.com/food-api/docs#Get-Ingredient-Information)
+### `HTTP GET`
+Use an ingredient id to get all available information about an ingredient, such as its image and supermarket aisle.
+
+
+
+
+
+## Add-on features (Should have)
+
+### [Get Similar Recipes](https://spoonacular.com/food-api/docs#Get-Similar-Recipes)
+### `HTTP GET`
+Find recipes which are similar to the given one.
+
+### [Get Ingredient Substitutes](https://spoonacular.com/food-api/docs#Get-Ingredient-Substitutes)
+### `HTTP GET`
+Search for substitutes for a given ingredient.
+
+
+## Add-on features (Could have)
+
+### [Autocomplete Recipe Search](https://spoonacular.com/food-api/docs#Autocomplete-Recipe-Search)
+### `HTTP GET`
+Autocomplete a partial input to suggest possible recipe names.
+
+### [Autocomplete Ingredient Search](https://spoonacular.com/food-api/docs#Autocomplete-Ingredient-Search)
+### `HTTP GET`
+Autocomplete the entry of an ingredient.
+
+### [Search Grocery Products](https://spoonacular.com/food-api/docs#Search-Grocery-Products)
+### `HTTP GET`
+Search packaged food products, such as frozen pizza or Greek yogurt.
+
+### [Get Product Information](https://spoonacular.com/food-api/docs#Get-Product-Information)
+### `HTTP GET`
+Use a product id to get full information about a product, such as ingredients, nutrition, etc. The nutritional information is per serving.
+
+### [Classify Cuisine](https://spoonacular.com/food-api/docs#Classify-Cuisine)
+### `HTTP POST`
+Classify the recipe's cuisine.
+
+### [Analyze Recipe](https://spoonacular.com/food-api/docs#Analyze-Recipe)
+### `HTTP POST`
+This endpoint allows you to send raw recipe information, such as title, servings, and ingredients, to then see what we compute (badges, diets, nutrition, and more). This is useful if you have your own recipe data and want to enrich it with our semantic analysis.
+
+## Helpful endpoints
+
+### [Ingredients by ID](https://spoonacular.com/food-api/docs#Ingredients-by-ID)
+### `HTTP GET`
+
+Get a recipe's ingredient list.
+
+### [Nutrition by ID](https://spoonacular.com/food-api/docs#Nutrition-by-ID)
+### `HTTP GET`
+Get a recipe's nutrition widget data.
+
+### [Taste by ID](https://spoonacular.com/food-api/docs#Taste-by-ID)
+### `HTTP GET`
+Get a recipe's taste. The tastes supported are sweet, salty, sour, bitter, savory, and fatty. These tastes are between 0 and 100 while the spiciness value is in scoville on an open scale of 0 and above.
+
+Every ingredient has each of these values and it is weighted by how much they contribute to the recipe. Spiciness is taking the weight of the spicy ingredient and multiplying it with its scoville amount. Of course, taste is also very personal and it depends on how it is prepared so all of the values should only give you an indication of how the dish tastes.
+
+### [Get Analyzed Recipe Instructions](https://spoonacular.com/food-api/docs#Get-Analyzed-Recipe-Instructions)
+### `HTTP GET`
+Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and equipment required.
+
+### [Extract Recipe from Website](https://spoonacular.com/food-api/docs#Extract-Recipe-from-Website)
+### `HTTP GET`
+This endpoint lets you extract recipe data such as title, ingredients, and instructions from any properly formatted Website.
+
+### [Quick Answer](https://spoonacular.com/food-api/docs#Quick-Answer)
+### `HTTP GET`
+Answer a nutrition related natural language question.
+
+### [Talk to Chatbot](https://spoonacular.com/food-api/docs#Talk-to-Chatbot)
+### `HTTP GET`
+This endpoint can be used to have a conversation about food with the spoonacular chatbot. Use the "Conversation Suggests" endpoint to show your user what he or she can say.

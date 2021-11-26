@@ -1,5 +1,9 @@
 # Project Source Code
 
+[![CodeFactor](https://www.codefactor.io/repository/github/cse110-fa21-group5/cse110-fa21-group5/badge?s=5332332ef2c647f086442b3584693dbe4a0b2068)](https://www.codefactor.io/repository/github/cse110-fa21-group5/cse110-fa21-group5)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0552da19-8d05-408c-963e-04f9ea60650d/deploy-status)](https://team-ocean-stage.netlify.app/)
+
 ## 🚀 Getting Started
 
 ### Git Commit Guidelines
@@ -9,8 +13,8 @@
 
 1. Make sure you have the latest version of `main` by running `git pull origin main`
 2. Create & checkout a new branch to work on with this command & naming scheme:
-    - `git checkout -b [firstname]+[partnername]-[issue-topic]` (example branch name: `adory+hanming-api-testing`)
-3. Work on & change ONLY the files that correspond to your issue/topic. If you notice minor discrepancies in unrelated files, create GitHub issues for them.
+    - `git checkout -b [firstname]+[partnername]-[feature-topic]` (example branch name: `adory+hanming-api-testing`)
+3. Work on & change ONLY the files that correspond to your feature/topic. If you notice minor discrepancies in unrelated files, create GitHub issues for them.
 4. Make sure you use Prettier to reformat style and run `eslint --fix` in `/source` to lint your code before committing. (Discussed in Coding section below)
 5. Add & commit your files with VS Code or Git commands. Your commit message should follow this format: `Add/Update/[Verb] [things changed] (#[issue number])"`.
     - Example: `Update style guidelines (#2)`
@@ -18,6 +22,7 @@
 6. If you want to update the remote repostiory, push your changes.
 7. If you then want to merge your changes with the main branch, create a pull request to your branch
    [here](https://github.com/cse110-fa21-group5/cse110-fa21-group5/pulls).
+    - Netlify should
 
 ### Coding Environment
 
@@ -76,7 +81,7 @@
 
 ## 🗒️ Resources
 
--	[GitHub Repo Issues](https://github.com/cse110-fa21-group5/cse110-fa21-group5/issues)
--	[GitHub Project Board](https://github.com/orgs/cse110-fa21-group5/projects/1/views/1)
+-   [GitHub Repo Issues](https://github.com/cse110-fa21-group5/cse110-fa21-group5/issues)
+-   [GitHub Project Board](https://github.com/orgs/cse110-fa21-group5/projects/1/views/1)
 -   [Bootstrap 5.1 Docs (use the search bar!)](https://getbootstrap.com/docs/5.1)
 -   [Font Awesome 6.0 Icon Gallery](https://fontawesome.com/v6.0/icons?m=free)

@@ -8,6 +8,9 @@ node_modules/
 .env
 .env.test
 
+# Generated files
+source/docs/
+
 # Visual Studio Code files
 .vscode/*
 !.vscode/settings.json

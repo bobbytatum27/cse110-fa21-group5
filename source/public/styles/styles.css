@@ -1,7 +1,9 @@
+/* ---------- GLOBAL STYLES ---------- */
 html,
 body {
-    height: 100%;
-    font-family: 'Nunito', sans-serif;
+	height: 100%;
+	font-family: 'Nunito', sans-serif;
+	overflow: hidden; /* #content will be scrollable */
 }
 
 h1,
@@ -10,13 +12,154 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Quattrocento', serif;
+	font-family: 'Quattrocento', serif;
 }
 
-input {
-    border-radius: 0.5em !important;
+h1,
+h2,
+h3 {
+	font-weight: bold;
 }
 
-button {
-    border-radius: 0.5em !important;
+h4,
+h5,
+h6 {
+	font-family: 'Nunito', sans-serif;
+}
+
+input,
+textarea {
+	border-radius: 0.5em !important;
+}
+
+textarea {
+	padding: 1em;
+}
+
+label {
+	font-weight: bold;
+}
+
+button:not(.accordion-button) {
+	border-radius: 0.5em;
+}
+
+button.accordion-button {
+	font-weight: bold;
+}
+
+.truncate-2 {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	white-space: normal;
+}
+
+.truncate-3 {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	display: -webkit-box;
+	white-space: normal;
+}
+
+#content {
+	overflow: auto;
+}
+
+/* ---------- RECIPE PAGE ---------- */
+#facts li {
+	border: none;
+}
+
+#facts li + li {
+	border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#recipeImg {
+	max-height: 33vh;
+}
+
+#ingredients li {
+	margin-bottom: 1rem;
+}
+
+#steps li {
+	padding: 1rem;
+	cursor: pointer;
+}
+
+#steps li.active {
+	font-weight: bold;
+	background-color: rgb(240, 241, 242);
+}
+
+#cornerBtns {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 1rem;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+/* --- Minimum (Bootstrap breakpoints) --- */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	.larger-than-sm-class {
+		position: static;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.larger-than-md-class {
+		position: static;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.larger-than-lg-class {
+		position: static;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.larger-than-xl-class {
+		position: static;
+	}
+}
+
+/* --- Maximum --- */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.at-most-xs-class {
+		position: static;
+	}
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+	.at-most-sm-class {
+		position: static;
+	}
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+	#facts li + li {
+		border-left: none;
+		border-top: 1px solid rgba(0, 0, 0, 0.125);
+	}
+
+	.at-most-md-class {
+		position: static;
+	}
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+	.at-most-lg-class {
+		position: static;
+	}
 }
