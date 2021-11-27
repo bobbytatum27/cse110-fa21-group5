@@ -42,6 +42,14 @@ Recipes should be stored in JSON with the following key-value pairs. These value
 - `video: VideoObject`
     - A video depicting the steps to make the dish.
     - REQUIRED: No
+- `keywords : CreativeWork`
+    - Fields describing the tags used to describe the content
+    - REQUIRED: No
+- `lastViewed : Date`
+    - The last time a recipe was viewed to implement the most recent function
+    - see [this link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/valueOf)
+        -use valueOf function
+    - REQUIRED: No
 
 See [Google's guide on recipe
 data](https://developers.google.com/search/docs/advanced/structured-data/recipe#recipe-properties) for more info on
@@ -83,3 +91,9 @@ expected structure of each.
     - fields
         - `thumbnail: ImageObject`
         - `duration: Duration`
+- CreativeWorkObject
+    - see [this page](https://schema.org/CreativeWork)
+    - fields
+        - `keywords: String`
+
+
