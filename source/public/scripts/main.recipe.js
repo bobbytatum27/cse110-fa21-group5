@@ -204,7 +204,7 @@ console.log(`ID: ${id}`);
 console.group('Local storage');
 console.log(localStorage);
 console.log('User recipes (localStorage.recipes):');
-console.log(JSON.parse(localStorage.recipes));
+console.log(JSON.parse(localStorage.recipes || '[]'));
 console.groupEnd('Local storage');
 
 // Validate recipe source and id
