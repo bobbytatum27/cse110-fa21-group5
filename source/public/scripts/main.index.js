@@ -1,7 +1,37 @@
 /* global luxon */ // Tell ESLint to ignore undefined `luxon`.
 // main.index.js
 
-import { createIngredientList, createTagList, searchForKey } from './util.js';
+import { createIngredientList, createTagList, searchForKey, parseISO } from './util.js';
+
+// ----- Functions -----
+/**
+ * "Create new recipe" button logic.
+ */
+function activateCreateBtn() {
+	const createBtn = document.getElementById('createBtn');
+	createBtn.addEventListener('click', function () {
+		/**
+		 * Fetch template recipe schema for new recipe.
+		 */
+		fetch('/data/recipe-schema.json')
+			.then((response) => response.json())
+			.then((recipeSchema) => {
+				/**
+				 * Create new recipe.
+				 */
+				// Retreive recipes array and push new recipe.
+				const userRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+				userRecipes.push(recipeSchema);
+
+				// Update recipes array in storage.
+				localStorage.setItem('recipes', JSON.stringify(userRecipes));
+
+				// Redirect user to their new recipe.
+				window.location.href = `/recipe.html?source=user&id=${userRecipes.length - 1}#new`;
+			})
+			.catch((err) => console.error(err));
+	});
+}
 
 function createCards(recipeArr, source, parent) {
 	const templateCard = document.querySelector('.recipe-card');
@@ -37,10 +67,7 @@ function createCards(recipeArr, source, parent) {
 
 		// Tags
 		const tags = newCard.querySelector('.tags');
-		const cuisine = searchForKey(recipe, 'recipeCuisine');
-		const tagArr = [];
-		if (cuisine) tagArr.push(cuisine);
-		tags.textContent = createTagList(tagArr);
+		tags.textContent = searchForKey(recipe, 'tags') || createTagList(recipe).string;
 
 		// Author
 		const author = newCard.querySelector('.author');
@@ -48,11 +75,11 @@ function createCards(recipeArr, source, parent) {
 
 		// Cook time
 		const cookTime = newCard.querySelector('.cook-time');
-		const duration = luxon.Duration.fromISO(searchForKey(recipe, 'totalTime')).toObject();
-		let timeString = '';
-		timeString += duration.hours ? `${duration.hours} hrs ` : '';
-		timeString += duration.minutes ? `${duration.minutes} mins` : '';
-		cookTime.textContent = timeString;
+		// const duration = luxon.Duration.fromISO(searchForKey(recipe, 'totalTime')).toObject();
+		// let timeString = '';
+		// timeString += duration.hours ? `${duration.hours} hrs ` : '';
+		// timeString += duration.minutes ? `${duration.minutes} mins` : '';
+		cookTime.textContent = parseISO(searchForKey(recipe, 'totalTime'));
 
 		// Description
 		const description = newCard.querySelector('.description');
@@ -66,6 +93,7 @@ function createCards(recipeArr, source, parent) {
 	});
 }
 
+// ----- Page Initialization -----
 /**
  * Fetch preset recipes to populate frontend.
  */
@@ -83,3 +111,6 @@ fetch('/data/recipe-data.json')
  */
 const userRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
 createCards(userRecipes, 'user', document.getElementById('userCardGrid'));
+
+// Activate create button
+activateCreateBtn();
