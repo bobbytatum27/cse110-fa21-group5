@@ -20,41 +20,6 @@ Get a detailed list of nutrition information for each item from an input text qu
 ##### Sample Request URL
 `https://api.calorieninjas.com/v1/nutrition?query=10oz onion and a tomato`
 
-##### Sample Request URL
-```java
-{
-  "items": [
-    {
-      "sugar_g": 13.3,
-      "fiber_g": 4,
-      "serving_size_g": 283.495,
-      "sodium_mg": 8,
-      "name": "onion",
-      "potassium_mg": 99,
-      "fat_saturated_g": 0.1,
-      "fat_total_g": 0.5,
-      "calories": 126.7,
-      "cholesterol_mg": 0,
-      "protein_g": 3.9,
-      "carbohydrates_total_g": 28.6
-    },
-    {
-      "sugar_g": 2.6,
-      "fiber_g": 1.2,
-      "serving_size_g": 100,
-      "sodium_mg": 4,
-      "name": "tomato",
-      "potassium_mg": 23,
-      "fat_saturated_g": 0,
-      "fat_total_g": 0.2,
-      "calories": 18.2,
-      "cholesterol_mg": 0,
-      "protein_g": 0.9,
-      "carbohydrates_total_g": 3.9
-    }
-  ]
-}
-```
 
 ##### Code Example
 ```javascript
@@ -289,10 +254,6 @@ This endpoint allows you to send raw recipe information, such as title, servings
 ##### Example Request and Response
 `GET https://api.spoonacular.com/recipes/analyze`
 
-##### Example Request and Response
-```json
-/* recipe data as in Get Recipe Information endpoint */
-```
 
 ## Helpful endpoints
 
@@ -301,9 +262,29 @@ This endpoint allows you to send raw recipe information, such as title, servings
 
 Get a recipe's ingredient list.
 
+`GET https://api.spoonacular.com/recipes/{id}/ingredientWidget.json`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`id`** | number | 1003464 | The recipe id. |
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/recipes/1003464/ingredientWidget.json`
+
 ### [Nutrition by ID](https://spoonacular.com/food-api/docs#Nutrition-by-ID)
 ### `HTTP GET`
 Get a recipe's nutrition widget data.
+
+`GET https://api.spoonacular.com/recipes/{id}/nutritionWidget.json`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`id`** | number | 1003464 | The recipe id. |
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/recipes/1003464/nutritionWidget.json`
 
 ### [Taste by ID](https://spoonacular.com/food-api/docs#Taste-by-ID)
 ### `HTTP GET`
@@ -311,18 +292,81 @@ Get a recipe's taste. The tastes supported are sweet, salty, sour, bitter, savor
 
 Every ingredient has each of these values and it is weighted by how much they contribute to the recipe. Spiciness is taking the weight of the spicy ingredient and multiplying it with its scoville amount. Of course, taste is also very personal and it depends on how it is prepared so all of the values should only give you an indication of how the dish tastes.
 
+`GET https://api.spoonacular.com/recipes/{id}/tasteWidget.json`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`id`** | number | 1003464 | The recipe id. |
+| **`normalize`** | boolean | false | Normalize to the strongest taste. |
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/recipes/69095/tasteWidget.json`
+
 ### [Get Analyzed Recipe Instructions](https://spoonacular.com/food-api/docs#Get-Analyzed-Recipe-Instructions)
 ### `HTTP GET`
 Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and equipment required.
+
+`GET https://api.spoonacular.com/recipes/{id}/analyzedInstructions`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`id`** | number | 1003464 | The recipe id. |
+| **`stepBreakdown`** | boolean | true | Whether to break down the recipe steps even more. |
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/recipes/324694/analyzedInstructions`
 
 ### [Extract Recipe from Website](https://spoonacular.com/food-api/docs#Extract-Recipe-from-Website)
 ### `HTTP GET`
 This endpoint lets you extract recipe data such as title, ingredients, and instructions from any properly formatted Website.
 
+`GET https://api.spoonacular.com/recipes/extract`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`url`** | string | https://foodista.com/recipe/ZHK4KPB6/chocolate-crinkle-cookies |The URL of the recipe page. |
+| **`forceExtraction`** | boolean | true | If true, the extraction will be triggered whether we already know the recipe or not. Use this only if information is missing as this operation is slower. |
+| **`analyze`** | boolean | false | If true, the recipe will be analyzed and classified resolving in more data such as cuisines, dish types, and more. |
+| **`includeNutrition`** | boolean | false | Whether nutrition data should be added to correctly parsed ingredients. |
+| **`includeTaste`** | boolean | false | Whether taste data should be added to correctly parsed ingredients |
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/recipes/extract?url=https://foodista.com/recipe/ZHK4KPB6/chocolate-crinkle-cookies`
+
 ### [Quick Answer](https://spoonacular.com/food-api/docs#Quick-Answer)
 ### `HTTP GET`
 Answer a nutrition related natural language question.
 
+`GET https://api.spoonacular.com/recipes/quickAnswer`
+
+##### Headers
+`Content-Type: application/json`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`q`** | string | How much vitamin c is in 2 apples? | The nutrition related question. |
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/recipes/quickAnswer?q=How+much+vitamin+c+is+in+2+apples`
+
 ### [Talk to Chatbot](https://spoonacular.com/food-api/docs#Talk-to-Chatbot)
 ### `HTTP GET`
 This endpoint can be used to have a conversation about food with the spoonacular chatbot. Use the "Conversation Suggests" endpoint to show your user what he or she can say.
+
+`GET https://api.spoonacular.com/food/converse`
+
+##### Headers
+`Content-Type: application/json`
+
+##### Parameters
+| Name |Type  |Example  |Description  |
+|--|--|--|--|
+| **`text`** | string | donut recipes | The request / question / answer from the user to the chatbot. |
+| **`contextId`** | string | 342938 |An arbitrary globally unique id for your conversation. The conversation can contain states so you should pass your context id if you want the bot to be able to remember the conversation.|
+
+##### Sample Request URL
+`GET https://api.spoonacular.com/food/converse?text=tell+me+a+joke`
