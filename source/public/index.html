@@ -78,13 +78,19 @@
 
         <div class="offcanvas-body">
 
-            <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                    All recipes
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">My recipes</a>
-                <a href="#" class="list-group-item list-group-item-action">Most recent</a>
-                <a href="#" class="list-group-item list-group-item-action">Favorites</a>
+            <h6>Collection</h6>
+            <div class="d-flex align-items-start mb-3">
+                <div class="nav flex-column nav-pills w-100 me-3" id="recipeTabs" role="tablist"
+                    aria-orientation="vertical">
+                    <button class="nav-link active" id="navPresetTab" data-bs-toggle="pill" data-bs-target="#presetTab"
+                        type="button" role="tab" aria-controls="presetTab" aria-selected="true">
+                        Preset Recipes
+                    </button>
+                    <button class="nav-link" id="navUserTab" data-bs-toggle="pill" data-bs-target="#userTab"
+                        type="button" role="tab" aria-controls="userTab" aria-selected="false">
+                        Your Recipes
+                    </button>
+                </div>
             </div>
 
             <h6>Type</h6>
@@ -109,404 +115,69 @@
             <section id="recipes" class="container">
                 <h2 class="text-center">Recipes</h2>
 
-                <div id="cardGrid" class="row">
-                    <!-- Card 1 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/07/Creamy-Chipotle-Shrimp-4.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
+                <div class="tab-content" id="recipeTabsContent">
+                    <div class="tab-pane fade show active" id="presetTab" role="tabpanel"
+                        aria-labelledby="navPresetTab">
+                        <div id="presetCardGrid" class="row g-3">
 
-                                    <!-- rating value -->
-                                    <img src="images/icons/4-star.svg" class="rating-value" alt="4 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">CREAMY CHIPOTLE SHRIMP</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">30 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            Shrimp, Red Bell Pepper, Garlic and Green Onion, Salt and Pepper, Chipotle
-                                            Sauce,
-                                            Milk, Garnishings
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="userTab" role="tabpanel" aria-labelledby="navUserTab">
+                        <div id="userCardGrid" class="row g-3">
 
-                    <!-- Card 2 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/03/Teriyaki-Chicken-7.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/5-star.svg" class="rating-value" alt="5 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">TERIYAKI CHICKEN</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">20 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            boneless skinless chicken thighs, avocado oil, ginger, garlic, soy sauce,
-                                            mirin, honey
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Card 3 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2014/10/zucchini-noodles-pasta-lemon-garlic-shrimp-3.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/5-star.svg" class="rating-value" alt="5 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">ZUCCHINI PASTA WITH LEMON GARLIC SHRIMP</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">15 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            zucchini, olive oil, garlic, lemon, red pepper flakes, shrimp
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2017/04/Coconut-Curry-Chicken-6.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/4-star.svg" class="rating-value" alt="4 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">COCONUT CURRY CHICKEN</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">30 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            Chicken, Coconut Milk, Herbs, Rice, Spices, Veggies
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/02/Chicken-Fajitas-7.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/5-star.svg" class="rating-value" alt="5 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">CHICKEN FAJITAS</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">26 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            Onion, Bell Peppers, Olive oil, Boneless skinless chicken breasts
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/05/Chicken-Salad-5.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/4-star.svg" class="rating-value" alt="4 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">ULTIMATE CHICKEN SALAD</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">25 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            Chicken Breasts, Mayonnaise, Dijon Mustard, Red Grapes, Celery
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 7 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/12/Shepherds-Pie-9.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/4-star.svg" class="rating-value" alt="4 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">SHEPHERD’S PIE</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">60 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            Ground Lamb, Carrots, Broth, TomatoPaste, Herbs, Celery
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 8 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2015/11/shakshuka-11.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/4-star.svg" class="rating-value" alt="4 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">SHAKSHUKA</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">30 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            olive oil, onion, red bell pepper, garlic cloves, paprika,
-                                            cumin, chili powder, whole peeled tomatoes, eggs, salt and pepper,
-                                            cilantro, parsley
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 9 -->
-                    <div class="col-xl-4">
-                        <!-- Recipe Card -->
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <!-- recipe image -->
-                                    <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/05/Chicken-Stir-Fry-9.jpg"
-                                        style="width:150px;height:150px;" class="img-fluid rounded-start"
-                                        alt="recipe-image">
-
-                                    <!-- rating value -->
-                                    <img src="images/icons/4-star.svg" class="rating-value" alt="4 stars"
-                                        style="vertical-align:middle;margin:10px 0">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <!-- Card Body: Put all content in here -->
-                                        <!-- title of recipe -->
-                                        <h5 class="card-title  text-truncate">
-                                            <a href="/recipe.html">CHICKEN STIR FRY</a>
-                                        </h5>
-
-                                        <!-- Author/organization of recipe -->
-                                        <p class="author">
-                                            Lisa Bryan
-                                        </p>
-
-                                        <!-- cook time -->
-                                        <p>
-                                            <small class="cook-time text-muted">25 min</small>
-                                        </p>
-
-                                        <!-- ingredients -->
-                                        <p class="ingredients text-truncate">
-                                            Arrowroot Powder, Chicken Breasts, Chicken Broth, Salt & Pepper,
-                                            Sesame Oil & Honey, Tamari Soy Sauce, Carrot, Sesame Seeds, Bell Pepper,
-                                            Onion, Ginger, Green Onion, Garlic, Broccoli
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
 
+                <!-- Template Card -->
+                <div class="recipe-card col-xl-6 d-none">
+                    <!-- Recipe Card -->
+                    <div class="card h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4">
+                                <!-- Thumbnail -->
+                                <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/07/Creamy-Chipotle-Shrimp-4.jpg"
+                                    class="thumbnail img-fluid rounded-start" alt="Recipe thumbnail">
+
+                                <!-- Rating -->
+                                <img src="" class="rating p-2" alt="4 stars">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <!-- Title -->
+                                    <h5 class="card-title text-truncate truncate-2">
+                                        <a href="/recipe.html" class="title text-capitalize"></a>
+                                    </h5>
+
+                                    <!-- Tags -->
+                                    <p class="tags text-muted fst-italic">
+
+                                    </p>
+
+                                    <p>
+                                        <!-- Author of recipe -->
+                                        <span class="author"></span>
+                                        <br>
+                                        <!-- Cook time -->
+                                        <small class="cook-time text-muted"></small>
+                                    </p>
+
+                                    <!-- Description -->
+                                    <small class="text-muted">Description</small>
+                                    <p class="description text-truncate truncate-3">
+
+                                    </p>
+
+                                    <!-- Ingredients -->
+                                    <small class="text-muted">Ingredients</small>
+                                    <p class="ingredients text-truncate truncate-2 mb-0">
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </section>
         </main>
@@ -517,9 +188,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <!-- # Luxon (for time duration) -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"
+        integrity="sha256-vSborW7X9FSJg4XLi1TpwZKTlbN2nP6lHhC0XCNrVwU=" crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
     <script src="/scripts/main.js"></script>
+    <script src="/scripts/main.index.js" type="module"></script>
 </body>
 
 </html>
