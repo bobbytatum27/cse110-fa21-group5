@@ -44,24 +44,4 @@ jobs:
                   # Validate only JS files
                   VALIDATE_JAVASCRIPT_ES: true
                   JAVASCRIPT_ES_CONFIG_FILE: '.eslintrc.json'
-              
-    prettier:
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-
-            - name: Install NPM dependencies
-              run: npm ci
-
-            - name: Run Prettier
-              run: npm run format
-
-            - name: Commit changes
-              uses: stefanzweifel/git-auto-commit-action@v2.3.0
-              with:
-                commit_message: Apply Prettier changes
-                branch: ${{ github.head_ref }}
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
