@@ -4,7 +4,8 @@
   "description": "Recipe manager",
   "main": "index.js",
   "scripts": {
-    "jsdoc": "./node_modules/.bin/jsdoc public -r -d docs",
+    "jsdoc": "jsdoc public -r -d docs",
+    "lint": "eslint --fix public/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
