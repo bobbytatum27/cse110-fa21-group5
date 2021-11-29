@@ -1,3 +1,4 @@
+/* global luxon */ // Tell ESLint to ignore undefined `luxon`.
 // util.js
 
 /**
@@ -68,7 +69,7 @@ function createTagList(data) {
 
 	fieldsToCheck.forEach((field) => {
 		const fieldValue = searchForKey(data, field);
-		if (typeof(fieldValue) === 'string') {
+		if (typeof fieldValue === 'string') {
 			/* CASE: Value is one tag or a string of tags */
 
 			if (fieldValue.includes(',')) {
@@ -76,8 +77,7 @@ function createTagList(data) {
 				fieldValue.split(',').forEach((tag) => {
 					tagArr.push(tag.trim());
 				});
-			}
-			else {
+			} else {
 				// CASE: Value is one tag
 				tagArr.push(fieldValue);
 			}
@@ -85,10 +85,10 @@ function createTagList(data) {
 			/* CASE: Value is an array of tags */
 			tagArr.concat(fieldValue);
 		}
-	})
+	});
 
 	// Capitalize first letter of every tag
-	tagArr = tagArr.map((tag) => (tag.charAt(0).toUpperCase() + tag.slice(1)));
+	tagArr = tagArr.map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1));
 
 	// The .slice(0,-2) here gets ride of the extra ', ' added to the last ingredient
 	return { array: tagArr, string: tagArr.join(', ') };

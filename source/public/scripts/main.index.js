@@ -1,4 +1,3 @@
-/* global luxon */ // Tell ESLint to ignore undefined `luxon`.
 // main.index.js
 
 import { createIngredientList, createTagList, searchForKey, parseISO } from './util.js';
@@ -75,10 +74,6 @@ function createCards(recipeArr, source, parent) {
 
 		// Cook time
 		const cookTime = newCard.querySelector('.cook-time');
-		// const duration = luxon.Duration.fromISO(searchForKey(recipe, 'totalTime')).toObject();
-		// let timeString = '';
-		// timeString += duration.hours ? `${duration.hours} hrs ` : '';
-		// timeString += duration.minutes ? `${duration.minutes} mins` : '';
 		cookTime.textContent = parseISO(searchForKey(recipe, 'totalTime'));
 
 		// Description

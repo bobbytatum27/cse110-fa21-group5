@@ -1,3 +1,4 @@
+/* global luxon */ // Tell ESLint to ignore undefined `luxon`.
 // main.recipe.js
 
 import { searchForKey, parseISO, createTagList } from './util.js';
