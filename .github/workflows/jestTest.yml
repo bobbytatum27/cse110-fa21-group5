@@ -17,7 +17,7 @@ jobs:
           node-version: '12'
       - run: yarn install
         working-directory: ./source
-      - run: yarn test:ci
+      - run: npm test
         working-directory: ./source
       - name: Tests
         if: ${{ success() }}
