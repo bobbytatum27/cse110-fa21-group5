@@ -47,8 +47,8 @@
             </a>
         </nav>
 
-        <!-- Expand Drawer Button (default: visible) -->
-        <a id="expandBtn" class="link-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#drawer"
+        <!-- Expand Drawer Button (default: d-none) -->
+        <a id="expandBtn" class="link-dark d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#drawer"
             aria-controls="drawer" title="Expand drawer">
             <i class="fa-solid fa-angle-right"></i>
         </a>
@@ -77,7 +77,7 @@
             <!-- Edit Title -->
             <div class="mb-3">
                 <label for="titleInput" class="form-label">Title</label>
-                <input type="text" class="form-control" id="titleInput" value="Shakshuka">
+                <input type="text" class="form-control" id="titleInput" value="Shakshuka" placeholder="Recipe title">
             </div>
 
             <!-- Edit Ingredients & Steps -->
@@ -97,7 +97,7 @@
                                 <label for="tagsInput" class="form-label">
                                     <i class="fa-solid fa-tags"></i> Tags
                                 </label>
-                                <input type="text" class="form-control" id="tagsInput" value="Holiday, Snack">
+                                <input type="text" class="form-control" id="tagsInput" value="Holiday, Snack" placeholder="Tag 1, Tag 2, etc.">
                             </div>
 
                             <!-- Edit Prep Time -->
@@ -160,7 +160,8 @@
                     <div id="editIngredientsCollapse" class="accordion-collapse collapse"
                         aria-labelledby="editIngredientsLabel">
                         <div class="accordion-body">
-                            <textarea id="" class="w-100" name="" rows="10">
+                            <textarea id="ingredientsInput" class="w-100" name="" rows="10"
+                                placeholder="3 eggs&#10;1 cup of milk&#10;etc.">
 12 large eggs
 4 small eggs
 1 red fish
@@ -181,7 +182,8 @@ Kosher salt and freshly ground black pepper</textarea>
                     </h2>
                     <div id="editStepsCollapse" class="accordion-collapse collapse" aria-labelledby="editStepsLabel">
                         <div class="accordion-body">
-                            <textarea id="" class="w-100" name="" rows="10">
+                            <textarea id="stepsInput" class="w-100" name="" rows="10"
+                                placeholder="Step 1&#10;&#10;Step 2&#10;&#10;etc.">
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci doloremque dolor, tempore laborum fuga omnis! Quas, tenetur iste accusantium qui error adipisci molestias similique, illum dolorum assumenda ipsam mollitia dolores?
 
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corporis voluptas quos veniam voluptatibus, fugit fugiat ipsa voluptates exercitationem voluptatem. Cum quae nisi veniam eum vel ratione facere soluta.
@@ -195,28 +197,30 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corpor
 
             <!-- Upload Image -->
             <div class="mb-3">
-                <label for="imageInput" class="form-label">Image</label>
-                <input class="form-control" type="file" id="imageInput">
+                <label for="imageInput" class="form-label">Image link</label>
+                <input type="text" class="form-control" id="imageInput" placeholder="Image URL">
             </div>
 
             <!-- Edit Description -->
             <div class="mb-3">
                 <label for="descriptionInput" class="form-label">Description</label>
-                <textarea class="form-control" id="descriptionInput" rows="5">Recipe details: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui optio eligendi provident, tempora minima natus, blanditiis distinctio autem quo dolorum aliquam explicabo minus incidunt perferendis quam expedita sit et illo!
+                <textarea class="form-control" id="descriptionInput" rows="5" placeholder="Recipe description">Recipe details: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui optio eligendi provident, tempora minima natus, blanditiis distinctio autem quo dolorum aliquam explicabo minus incidunt perferendis quam expedita sit et illo!
                 </textarea>
             </div>
 
             <!-- Edit Source -->
             <div class="mb-3">
-                <label for="sourceInput" class="form-label">Source (Author or Organization)</label>
-                <input type="text" class="form-control" id="sourceInput" value="Serious Eats">
+                <label for="sourceInput" class="form-label">Source</label>
+                <input type="text" class="form-control" id="sourceInput" value="Serious Eats"
+                    placeholder="Author or organization">
             </div>
 
             <!-- Edit Link -->
             <div class="mb-3">
-                <label for="urlInput" class="form-label">Source link (URL)</label>
+                <label for="urlInput" class="form-label">Source link</label>
                 <input type="text" class="form-control" id="urlInput"
-                    value="https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab">
+                    value="https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab"
+                    placeholder="Recipe URL">
             </div>
         </div>
     </aside>
@@ -224,8 +228,10 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corpor
     <!-- Content -->
     <div id="content" class="flex-fill pt-3">
         <main class="container-md">
-            <section id="recipe" class="container text-center">
-                <h2 class="mb-1">Shakshuka</h2>
+            <!-- Recipe Container (default: invisible) -->
+            <!-- Invisible until population finishes -->
+            <section id="recipe" class="container invisible text-center">
+                <h2 id="title" class="mb-1">Shakshuka</h2>
                 <small>
                     <span id="source">Serious Eats</span>,
                     <a href="https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab" id="url"
@@ -308,7 +314,7 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corpor
                 </p>
 
                 <!-- Recipe Image -->
-                <img id="recipeImg" class="img-fluid mb-4"
+                <img id="image" class="img-fluid mb-4"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Shakshuka8.jpg/1920px-Shakshuka8.jpg"
                     alt="Image for recipe">
 
@@ -326,15 +332,6 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corpor
                         </h3>
 
                         <ul id="ingredients" class="list-unstyled">
-                            <li><span class="amount fw-bold">12</span> <span class="ingredient">large eggs</span></li>
-                            <li><span class="amount fw-bold">4</span> <span class="ingredient">small eggs</span></li>
-                            <li><span class="amount fw-bold">1</span> <span class="ingredient">red fish</span></li>
-                            <li><span class="amount fw-bold">2</span> <span class="ingredient">blue fish</span></li>
-                            <li>
-                                <span class="amount fw-bold">1</span> <span class="ingredient">slice good melting
-                                    cheese, such as American, cheddar, or homemade melting cheese</span>
-                            </li>
-                            <li>Kosher salt and freshly ground black pepper</li>
                         </ul>
                     </article>
 
@@ -343,40 +340,50 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corpor
                         <h3 class="mb-3">Steps</h3>
 
                         <ol id="steps">
-                            <li class="active">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci doloremque dolor,
-                                tempore laborum fuga omnis! Quas, tenetur iste accusantium qui error adipisci molestias
-                                similique, illum dolorum assumenda ipsam mollitia dolores?
-                            </li>
-                            <li>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corporis
-                                voluptas quos veniam voluptatibus, fugit fugiat ipsa voluptates exercitationem
-                                voluptatem. Cum quae nisi veniam eum vel ratione facere soluta.
-                            </li>
-                            <li>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corporis
-                                voluptas quos veniam voluptatibus, fugit fugiat ipsa voluptates exercitationem
-                                voluptatem. Cum quae nisi veniam eum vel ratione facere soluta.
-                            </li>
                         </ol>
                     </article>
                 </div>
             </section>
         </main>
 
-        <div id="cornerBtns" class="d-flex flex-column gap-2">
-            <button id="addBtn" class="btn btn-primary rounded-pill py-2" data-bs-toggle="tooltip"
+        <!-- Corner Action Buttons (default: invisible) -->
+        <div id="cornerBtns" class="d-flex flex-column gap-2 invisible">
+            <button id="addBtn" class="btn btn-primary rounded-pill pt-2" data-bs-toggle="tooltip"
                 data-bs-placement="left" title="Add recipe">
                 <i class="fa-solid fa-plus"></i>
+            </button>
+            <button id="speechBtn" class="btn btn-secondary rounded-pill py-2" data-bs-toggle="tooltip"
+                data-bs-placement="left" title="Toggle speech commands">
+                <i class="fa-solid fa-microphone"></i>
             </button>
             <button id="editBtn" class="btn btn-warning rounded-pill py-2" data-bs-toggle="offcanvas"
                 data-bs-target="#drawer" aria-controls="drawer" data-bs-placement="left" title="Edit recipe">
                 <i class="fa-solid fa-pencil"></i>
             </button>
-            <button id="deleteBtn" class="btn btn-danger rounded-pill py-2" data-bs-toggle="tooltip"
-                data-bs-placement="left" title="Delete recipe">
+            <button id="deleteBtn" class="btn btn-danger rounded-pill py-2" data-bs-toggle="modal"
+                data-bs-target="#deleteModal" data-bs-placement="left" title="Delete recipe">
                 <i class="fa-solid fa-trash"></i>
             </button>
+        </div>
+
+        <!-- Delete Recipe Modal -->
+        <div id="deleteModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Delete recipe</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this recipe from your collection?
+                        <br>
+                        You will not be able to restore its data!
+                    </div>
+                    <div class="modal-footer">
+                        <button id="confirmDeleteBtn" type="button" class="btn btn-danger">Yes, I'm sure!</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -385,9 +392,14 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dolorem, corpor
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <!-- # Luxon (for time duration) -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"
+        integrity="sha256-vSborW7X9FSJg4XLi1TpwZKTlbN2nP6lHhC0XCNrVwU=" crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
     <script src="/scripts/main.js"></script>
+    <script src="/scripts/util.js" type="module"></script>
+    <script src="/scripts/main.recipe.js" type="module"></script>
 </body>
 
 </html>

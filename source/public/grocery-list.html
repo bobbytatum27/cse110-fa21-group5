@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,27 +75,71 @@
         </div>
 
         <div class="offcanvas-body">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, natus ipsa sed autem aperiam
-                repudiandae
-                totam laborum hic incidunt illum vitae facilis vel nulla, accusantium molestias? Saepe doloribus in
-                natus.
-            </p>
-
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search for a recipe!" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div class="nav flex-column nav-pills w-100 me-3" id="recipeTabs" role="grocerylist"
+                aria-orientation="vertical">
+                <!-- recipe lists in the drawer -->
+                <button class="nav-link active" id="groceryRecipe1" data-bs-toggle="pill" data-bs-target="#groceryRecipe1"
+                    type="button" role="tab" aria-controls="groceryRecipe1" aria-selected="true">
+                    Green Tea Noodles With Sticky Sweet Chilli Salmon Recipe
+                </button>
+                <button class="nav-link" id="groceryRecipe2" data-bs-toggle="pill" data-bs-target="#groceryRecipe2"
+                    type="button" role="tab" aria-controls="groceryRecipe2" aria-selected="false">
+                    Sesame Beef With Gochujang Udon Noodles Recipe
+                </button>
+                <button class="nav-link" id="groceryRecipe3" data-bs-toggle="pill" data-bs-target="#groceryRecipe3"
+                    type="button" role="tab" aria-controls="groceryRecipe3" aria-selected="false">
+                    Silverbeet Fatteh With Sumac Yoghurt And Chickpeas Recipe
+                </button>
+                <button class="nav-link" id="groceryRecipe4" data-bs-toggle="pill" data-bs-target="#groceryRecipe4"
+                    type="button" role="tab" aria-controls="groceryRecipe4" aria-selected="false">
+                    Tomato Vodka Rigatoni Recipe
+                </button>
+                <button class="nav-link" id="groceryRecipe5" data-bs-toggle="pill" data-bs-target="#groceryRecipe5"
+                    type="button" role="tab" aria-controls="groceryRecipe5" aria-selected="false">
+                    Lemon Chicken Recipe
+                </button>
+                <button class="nav-link" id="groceryRecipe6" data-bs-toggle="pill" data-bs-target="#groceryRecipe6"
+                    type="button" role="tab" aria-controls="groceryRecipe6" aria-selected="false">
+                    Iceberg With Dried Oregano Dressing And Creamy Sheep's Milk Cheese Recipe
+                </button>
+            </div>
         </div>
     </aside>
 
     <!-- Content -->
     <div id="content" class="flex-fill pt-3">
         <main class="container">
-            <section id="recipes" class="container">
+            <section id="groceryListDiv" class="container">
                 <h2 class="text-center">Grocery List</h2>
 
-                
+                <!-- Template Ingredient Category in Grocery page -->
+                <div id="groceryCategory" style="padding-left: 20px; background-color: rgb(65, 65, 85); color: white; display: flex; width: 100%;">
+                    <div style="text-transform: uppercase; padding: 10px 0px;">
+                        Category Sample
+                    </div>
+                </div>
+
+                <div style="padding-left: 20px; display: flex; width: 100%;">
+                    <div style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px;width: 10px; height: 10px; background-color: rgb(26, 20, 54);"></div>
+                    
+                    <div style="padding-right: 20px; width: 100%; display: flex;">
+                        <button class="groceryIngredient" id="groceryIngredient" data-bs-toggle="pill" data-bs-target="#groceryIngredient"
+                            type="button" role="tab" aria-controls="groceryIngredient" style="padding-left: 20px; background-color: rgb(219, 220, 235); display: flex; width: 100%;">
+                            Ingredient sample 1
+                        </button>
+                    </div>
+                </div>
+
+                <div style="padding-left: 20px; display: flex; width: 100%;">
+                    <div style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px;width: 10px; height: 10px; background-color: rgb(26, 20, 54);"></div>
+                    
+                    <div style="padding-right: 20px; width: 100%; display: flex;">
+                        <button class="groceryIngredient" id="groceryIngredient" data-bs-toggle="pill" data-bs-target="#groceryIngredient"
+                            type="button" role="tab" aria-controls="groceryIngredient" style="padding-left: 20px; background-color: rgb(219, 220, 235); display: flex; width: 100%;">
+                            Ingredient sample 1
+                        </button>
+                    </div>
+                </div>
             </section>
         </main>
     </div>

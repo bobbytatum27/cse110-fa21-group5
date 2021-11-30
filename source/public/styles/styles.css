@@ -3,6 +3,7 @@ html,
 body {
 	height: 100%;
 	font-family: 'Nunito', sans-serif;
+	overflow: hidden; /* #content will be scrollable */
 }
 
 h1,
@@ -18,6 +19,12 @@ h1,
 h2,
 h3 {
 	font-weight: bold;
+}
+
+h4,
+h5,
+h6 {
+	font-family: 'Nunito', sans-serif;
 }
 
 input,
@@ -41,6 +48,24 @@ button.accordion-button {
 	font-weight: bold;
 }
 
+.truncate-2 {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	white-space: normal;
+}
+
+.truncate-3 {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	display: -webkit-box;
+	white-space: normal;
+}
+
+#content {
+	overflow: auto;
+}
+
 /* ---------- RECIPE PAGE ---------- */
 #facts li {
 	border: none;
@@ -50,7 +75,7 @@ button.accordion-button {
 	border-left: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-#recipeImg {
+#image {
 	max-height: 33vh;
 }
 
@@ -60,6 +85,7 @@ button.accordion-button {
 
 #steps li {
 	padding: 1rem;
+	cursor: pointer;
 }
 
 #steps li.active {
@@ -71,7 +97,7 @@ button.accordion-button {
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	margin: 1rem;
+	margin: 1rem 2rem;
 }
 
 /* ---------- MEDIA QUERIES ---------- */
