@@ -1,5 +1,5 @@
 const request = require('request');
-const axios = require('axios')
+const axios = require('axios');
 
 /**
  * Key for Steven to use for debug purpose, please create your own api 
@@ -19,7 +19,7 @@ export async function caloriesNinjasNutritions(query) {
 		const resp = await axios.get(`https://api.calorieninjas.com/v1/nutrition?query=${query}`, {headers: {'X-Api-Key': caloriesKeysSteven}});
         console.log(resp.data);
 	} catch (error) {
-		console.error(error)
+		console.error(error);
 	}
 }
 
@@ -34,7 +34,7 @@ export async function searchRecipe(params){
 		const resp = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${spoonKeysSteven}?query=${params.query}`, {headers: {'Content-Type': 'application/json'}});
         console.log(resp.data);
 	} catch (error) {
-		console.error(error)
+		console.error(error);
 	}
 }
 
@@ -49,7 +49,7 @@ export async function getRecipeInformation(id){
 		const resp = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${spoonKeysSteven}`, {headers: {'Content-Type': 'application/json'}});
         console.log(resp.data);
 	} catch (error) {
-		console.error(error)
+		console.error(error);
 	}
 }
 
@@ -64,7 +64,7 @@ export async function ingredientsSearch(query){
 		const resp = await axios.get(`https://api.spoonacular.com/food/ingredients/search?apiKey=${spoonKeysSteven}?query=${query}`, {headers: {'Content-Type': 'application/json'}});
         console.log(resp.data);
 	} catch (error) {
-		console.error(error)
+		console.error(error);
 	}
 }
 
@@ -79,7 +79,7 @@ export async function getIngredientInfo(id){
 		const resp = await axios.get(`https://api.spoonacular.com/food/ingredients/${id}/information?apiKey=${spoonKeysSteven}`, {headers: {'Content-Type': 'application/json'}});
         console.log(resp.data);
 	} catch (error) {
-		console.error(error)
+		console.error(error);
 	}
 }
 
