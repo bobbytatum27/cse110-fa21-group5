@@ -44,4 +44,3 @@ jobs:
                   # Validate only JS files
                   VALIDATE_JAVASCRIPT_ES: true
                   JAVASCRIPT_ES_CONFIG_FILE: '.eslintrc.json'
-  
