@@ -7,14 +7,15 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
+
     - name: Create comment
-      id: pr-comment
       uses: peter-evans/create-or-update-comment@v1
       with:
         issue-number: {{ $github.event.number }}
         body: |
           This is a multi-line test comment
           - With GitHub **Markdown** :sparkles:
+
     - name: Lighthouse Auditt
       id: lighthouse-audit
       uses: foo-software/lighthouse-check-action@master
@@ -23,8 +24,9 @@ jobs:
         gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
         prCommentEnabled: true
         device: 'desktop'
+
     - name: OUTPUTS DEMO
       env:
-        LIGHTHOUSE_OUTPUTS: ${{ steps.lighthouse_audit.outputs.Scores.seo }}
+        LIGHTHOUSE_OUTPUTS: ${{ steps.lighthouse_audit.outputs.Scores }}
       run: echo $LIGHTHOUSE_OUTPUTS
       shell: bash
