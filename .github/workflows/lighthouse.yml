@@ -5,15 +5,16 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
-    # - name: Checkout Code
-    #   uses: actions/checkout@v2
-    # - name: Create comment
-    #   id: pr-comment
-    #   uses: peter-evans/create-or-update-comment@v1
-    #   with:
-    #     body: |
-    #       This is a multi-line test comment
-    #       - With GitHub **Markdown** :sparkles:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Create comment
+      id: pr-comment
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        body: |
+          This is a multi-line test comment
+          - With GitHub **Markdown** :sparkles:
+        issue-number: {{ $github.event.number }}
     - name: Lighthouse Audit
       id: lighthouse-audit
       uses: foo-software/lighthouse-check-action@master
