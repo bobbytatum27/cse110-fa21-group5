@@ -1,0 +1,13 @@
+name: Lighthouse
+on: [pull_request]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Lighthouse Audit
+      uses: foo-software/lighthouse-check-action@master
+      with:
+        urls: 'https://team-ocean-recipes.netlify.app/'
