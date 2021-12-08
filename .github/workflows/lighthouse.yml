@@ -67,6 +67,6 @@ jobs:
         TEST2: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults['data'] }}
         TEST3: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults.code }}
         TEST4: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults['code'] }}
-        TEST5: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults.code }}
+        TEST5: ${{ fromJson(steps.lighthouseCheck.outputs.lighthouseCheckResults).data[0].scores.accessibility }}
         TEST6: ${{ fromJSON(toJSON(steps.lighthouse-audit.outputs.lighthouseCheckResults)).code }}
       run: echo
