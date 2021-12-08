@@ -44,7 +44,10 @@ jobs:
       with:
         issue-number: ${{ github.event.pull_request.number }}
         body: |
-          Generating a Lighthouse Report for [https://team-ocean-recipes.netlify.app/](https://team-ocean-recipes.netlify.app/)...
+          Generating a Lighthouse Report for [https://team-ocean-recipes.netlify.app/](https://team-ocean-recipes.netlify.app/)
+          .
+          .
+          .
     - name: Lighthouse Audit
       id: lighthouse-audit
       uses: foo-software/lighthouse-check-action@master
@@ -59,12 +62,13 @@ jobs:
         comment-id: ${{steps.pr-comment.outputs.comment-id}}
         body: |
           Report finished!
-          **Results**
-          Accessibility Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.accessibility }}
-          Best Practices Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.bestPractices }}
-          Peformance Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.performance }}
-          Progressive Web App Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.progressiveWebApp }}
-          SEO Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.seo }}
+
+          ### Lighthouse Audit Results
+          - Accessibility Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.accessibility }}
+          - Best Practices Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.bestPractices }}
+          - Peformance Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.performance }}
+          - Progressive Web App Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.progressiveWebApp }}
+          - SEO Score: ${{ fromJson(steps.lighthouse-audit.outputs.lighthouseCheckResults).data[0].scores.seo }}
     - name: Echo to Shell
       env:
         RES: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults }}
