@@ -31,3 +31,5 @@ source/docs/
 # Obsidian files
 .obsidian/
 
+package-lock.json
+package.json
