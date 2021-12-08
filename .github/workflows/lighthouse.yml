@@ -24,6 +24,6 @@ jobs:
         device: 'desktop'
     - name: OUTPUTS DEMO
       env:
-        LIGHTHOUSE_OUTPUTS: ${{ steps.lighthouse_audit.outputs }}
+        LIGHTHOUSE_OUTPUTS: ${{ steps.lighthouse_audit.outputs.scores.seo }}
       run: echo $LIGHTHOUSE_OUTPUTS
       shell: bash
