@@ -62,5 +62,5 @@ jobs:
           This is an edit!
     - name: Echo to Shell
       env:
-        RES: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults.data[0].scores }}
+        RES: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults.data }}
       run: echo 
