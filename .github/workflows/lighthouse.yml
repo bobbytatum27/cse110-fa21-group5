@@ -65,4 +65,9 @@ jobs:
         RES: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults }}
         TEST1: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults.data }}
         TEST2: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults['data'] }}
+        TEST3: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults.code }}
+        TEST4: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults['code'] }}
+        TEST5: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults.code }}
+        TEST6: ${{ toJSON(steps.lighthouse-audit.outputs.lighthouseCheckResults) }}
+        TEST7: ${{ fromJSON(steps.lighthouse-audit.outputs.lighthouseCheckResults) }}
       run: echo
