@@ -11,10 +11,10 @@ jobs:
       id: pr-comment
       uses: peter-evans/create-or-update-comment@v1
       with:
+        issue-number: {{ $github.event.number }}
         body: |
           This is a multi-line test comment
           - With GitHub **Markdown** :sparkles:
-        issue-number: {{ $github.event.number }}
     - name: Lighthouse Auditt
       id: lighthouse-audit
       uses: foo-software/lighthouse-check-action@master
