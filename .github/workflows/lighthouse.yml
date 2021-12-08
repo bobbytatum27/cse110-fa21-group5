@@ -7,10 +7,27 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
+    - name: Create comment
+      id: pr-comment
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        body: |
+          This is a multi-line test comment
+          - With GitHub **Markdown** :sparkles:
     - name: Lighthouse Audit
+      id: lighthouse-audit
       uses: foo-software/lighthouse-check-action@master
       with:
         urls: 'https://team-ocean-recipes.netlify.app/'
         gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
         prCommentEnabled: true
         device: 'desktop'
+    - name: Update a comment
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        comment-id: ${{steps.pr-comment.outputs.comment-id}}
+        body: |
+          This is an edit!
+    - name: OUTPUTS DEMO
+      run: echo $steps.lighthouse-audit.outputs
+      shell: bash
