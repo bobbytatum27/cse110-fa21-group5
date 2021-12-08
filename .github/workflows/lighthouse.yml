@@ -11,3 +11,5 @@ jobs:
       uses: foo-software/lighthouse-check-action@master
       with:
         urls: 'https://team-ocean-recipes.netlify.app/'
+        gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
+        prCommentEnabled: true
