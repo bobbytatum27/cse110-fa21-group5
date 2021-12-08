@@ -5,24 +5,24 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-    - name: Create comment
-      uses: peter-evans/create-or-update-comment@v1
-      with:
-        body: |
-          This is a multi-line test comment
-          - With GitHub **Markdown** :sparkles:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
 
-    - name: Lighthouse Auditt
-      id: lighthouse-audit
-      uses: foo-software/lighthouse-check-action@master
-      with:
-        urls: 'https://team-ocean-recipes.netlify.app/'
-        gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
-        prCommentEnabled: true
-        device: 'desktop'
+      - name: Lighthouse Auditt
+          id: lighthouse-audit
+          uses: foo-software/lighthouse-check-action@master
+          with:
+            urls: 'https://team-ocean-recipes.netlify.app/'
+            gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
+            prCommentEnabled: true
+            device: 'desktop'
 
     - name: OUTPUTS DEMO
       env:
