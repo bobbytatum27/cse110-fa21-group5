@@ -16,13 +16,13 @@ jobs:
             - With GitHub **Markdown** :sparkles:
 
       - name: Lighthouse Auditt
-          id: lighthouse-audit
-          uses: foo-software/lighthouse-check-action@master
-          with:
-            urls: 'https://team-ocean-recipes.netlify.app/'
-            gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
-            prCommentEnabled: true
-            device: 'desktop'
+        id: lighthouse-audit
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          urls: 'https://team-ocean-recipes.netlify.app/'
+          gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
+          prCommentEnabled: true
+          device: 'desktop'
 
     - name: OUTPUTS DEMO
       env:
