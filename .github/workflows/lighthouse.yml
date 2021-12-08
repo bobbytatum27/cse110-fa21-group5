@@ -15,7 +15,7 @@ jobs:
           This is a multi-line test comment
           - With GitHub **Markdown** :sparkles:
         issue-number: {{ $github.event.number }}
-    - name: Lighthouse Audit
+    - name: Lighthouse Auditt
       id: lighthouse-audit
       uses: foo-software/lighthouse-check-action@master
       with:
