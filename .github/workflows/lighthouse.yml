@@ -13,3 +13,4 @@ jobs:
         urls: 'https://team-ocean-recipes.netlify.app/'
         gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
         prCommentEnabled: true
+        device: 'desktop'
