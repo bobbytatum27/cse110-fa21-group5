@@ -4,9 +4,8 @@
   "description": "Recipe manager",
   "main": "index.js",
   "scripts": {
-    "jsdoc": "jsdoc public -r -d docs",
-    "lint": "eslint --fix public/**/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jsdoc": "./node_modules/.bin/jsdoc public -r -d docs",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,13 @@
   },
   "homepage": "https://github.com/cse110-fa21-group5/cse110-fa21-group5#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
     "eslint": "^8.1.0",
+    "jest": "^27.3.1",
     "jsdoc": "^3.6.7"
+  },
+  "dependencies": {
+    "babel-jest": "^27.3.1",
+    "ts-jest": "^27.0.7"
   }
 }

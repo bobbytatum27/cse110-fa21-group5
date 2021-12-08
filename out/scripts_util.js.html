@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>scripts/util.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#@private">@private</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#activateAddBtn">activateAddBtn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#activateDeleteBtn">activateDeleteBtn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#activateSpeechBtn">activateSpeechBtn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createIngredientList">createIngredientList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deleteCornerBtns">deleteCornerBtns</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#id">id</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#initializeDrawer">initializeDrawer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#initializeServiceWorker">initializeServiceWorker</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#initializeTooltips">initializeTooltips</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#invalidRecipe">invalidRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#params">params</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateDrawer">populateDrawer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateRecipe">populateRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#recipeDiv">recipeDiv</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#recipeJSON">recipeJSON</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#searchForKey">searchForKey</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#source">source</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#userRecipes">userRecipes</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">scripts/util.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// util.js
+
+/**
+ * Recursively search for a key nested somewhere inside an object
+ * @param {Object} object the object with which you'd like to search
+ * @param {String} key the key that you are looking for in the object
+ * @returns {*} the value of the found key
+ */
+function searchForKey(object, key) {
+	let value;
+	Object.keys(object).some(function (k) {
+		if (k === key) {
+			value = object[k];
+			return true;
+		}
+		if (object[k] &amp;&amp; typeof object[k] === 'object') {
+			value = searchForKey(object[k], key);
+			return value !== undefined;
+		}
+	});
+	return value;
+}
+
+/**
+ * Takes in a list of ingredients raw from imported data and returns a neatly
+ * formatted comma separated list.
+ * @param {Array} ingredientArr The raw unprocessed array of ingredients from the
+ *                              imported data
+ * @return {String} the string comma separate list of ingredients from the array
+ */
+function createIngredientList(ingredientArr) {
+	let finalIngredientList = '';
+
+	/**
+	 * Removes the quantity and measurement from an ingredient string.
+	 * This isn't perfect, it makes the assumption that there will always be a quantity
+	 * (sometimes there isn't, so this would fail on something like '2 apples' or 'Some olive oil').
+	 * For the purposes of this lab you don't have to worry about those cases.
+	 * @param {String} ingredient the raw ingredient string you'd like to process
+	 * @return {String} the ingredient without the measurement &amp; quantity
+	 * (e.g. '1 cup flour' returns 'flour')
+	 */
+	function _removeQtyAndMeasurement(ingredient) {
+		return ingredient.split(' ').splice(2).join(' ');
+	}
+
+	ingredientArr.forEach((ingredient) => {
+		ingredient = _removeQtyAndMeasurement(ingredient);
+		ingredient = ingredient.replace(/[0-9]|[()]|ml|/g, '');
+		ingredient = ingredient.replace(/g /g, '');
+		ingredient = ingredient.trim();
+
+		if (ingredient !== '') {
+			finalIngredientList += `${ingredient}, `;
+		}
+	});
+
+	// Capitalize first letter
+	finalIngredientList = finalIngredientList.charAt(0).toUpperCase() + finalIngredientList.slice(1);
+
+	// The .slice(0,-2) here gets ride of the extra ', ' added to the last ingredient
+	return finalIngredientList.slice(0, -2);
+}
+
+function createTagList(tagArr) {
+	let finalIngredientList = '';
+
+	tagArr.forEach((tag) => {
+		tag = tag.trim();
+
+		if (tag !== '') {
+			finalIngredientList += `${tag}, `;
+		}
+	});
+
+	// Capitalize first letter
+	finalIngredientList = finalIngredientList.charAt(0).toUpperCase() + finalIngredientList.slice(1);
+
+	// The .slice(0,-2) here gets ride of the extra ', ' added to the last ingredient
+	return finalIngredientList.slice(0, -2);
+}
+
+export { searchForKey, createIngredientList, createTagList };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Tue Nov 30 2021 18:22:31 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
