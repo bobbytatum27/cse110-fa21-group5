@@ -42,7 +42,7 @@ jobs:
       id: pr-comment
       uses: peter-evans/create-or-update-comment@v1
       with:
-        issue-number: ${{ github.event.number }}
+        issue-number: ${{ github.event.pull_request.number }}
         body: |
           This is a multi-line test comment
           - With GitHub **Markdown** :sparkles:
@@ -60,3 +60,7 @@ jobs:
         comment-id: ${{steps.pr-comment.outputs.comment-id}}
         body: |
           This is an edit!
+    - name: Echo to Shell
+      env:
+        RES: ${{ steps.lighthouse-audit.outputs.lighthouseCheckResults }}
+      run: echo 
